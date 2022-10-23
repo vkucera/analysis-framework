@@ -5,7 +5,7 @@ title: Operator Documentation
 
 ## <a name="dashboard"></a>Dashboard
 
-* The <a href="https://alimonitor.cern.ch/hyperloop/dashboard" target="_blank">**Dashboard**</a> displays the current state of the system by showing a number of status parameters related to wagons, trains and grid jobs. Additionally, the user can see the summary of the last week: average completion time, number of finished trains and wagon tests. 
+* The <a href="https://alimonitor.cern.ch/hyperloop/dashboard" target="_blank">**Dashboard**</a> displays the current state of the system by showing a number of status parameters related to wagons, trains and grid jobs. Additionally, the user can see the summary of the last week: average completion time, number of finished trains and wagon tests.
 * Below, a display of the grid jobs state during the previous week is displayed, for every site.
 
 <div align="center">
@@ -33,12 +33,12 @@ title: Operator Documentation
 <img src="../images/automaticComposition.png" width="90%">
 </div>
 
-* If a wagon has _Derived data_ tables activated, it will be signalized with the icon 🗂️ in the _Test status_ column. 
+* If a wagon has _Derived data_ tables activated, it will be signalized with the icon 🗂️ in the _Test status_ column.
 * `☑️ slow train`: If enabled, the express train features are disabled. This means that you may have up to 2% more jobs which finish but the train run may take several days more.
 * `☑️ derived data`: If enabled, this train produces derived data to be used for further analysis. The results will not be merged and can be used as input for future train runs.
 * `☑️ automatic submission`: If enabled will submit the train automatically after the test is done and succeeds `🌟`.
 * `Target`: Sets the facility/cores where the train will be run.
-* Finally, after defining the configuration, click on `Compose 🚂` to compose a train. After composing a train run, the wagons selected cannot be selected for a different train run unless the current train run is [decomposed](#decompose). After the train run is [submitted](#submit), the wagons will be disabled. 
+* Finally, after defining the configuration, click on `Compose 🚂` to compose a train. After composing a train run, the wagons selected cannot be selected for a different train run unless the current train run is [decomposed](#decompose). After the train run is [submitted](#submit), the wagons will be disabled.
 * If a user changes a configuration between train composition and submission, the new configuration is not taken into account. The train runs with the wagons and dataset configuration corresponding to the time at which it was _created_.
 * The train will be automatically tested, and its progress can be followed in the _Train Runs_ table, or in the [**Train Runs**](#train-runs) page by clicking on the TRAIN_ID link.
 
@@ -48,7 +48,7 @@ title: Operator Documentation
 * First, a train run needs to be _Done_ on a smaller linked dataset before being run on a bigger dataset
 * Any user who is part of the analysis can **request a long train**, by going on the train result to the _Request long train_ tab
 * Choose the dataset, target and wagons you want to include and click the _Compose and request approval_ button.
-* Approval from the participating analyses PWGs conveners is required in order to submit a long train 
+* Approval from the participating analyses PWGs conveners is required in order to submit a long train
 
 <div align="center">
 <img src="../images/requestLongTrain.png" width="90%">
@@ -62,8 +62,8 @@ title: Operator Documentation
  <div align="center">
     <img src="../images/compareTrains.png" width="70%">
  </div>
- 
-* The train run detail can be accessed by clicking on the TRAIN_ID, or with the url <a href="https://alimonitor.cern.ch/hyperloop/train-run/TRAIN_ID" target="_blank">https://alimonitor.cern.ch/hyperloop/train-run/TRAIN_ID</a>.
+
+* The train run detail can be accessed by clicking on the TRAIN_ID, or with the url <a href="<https://alimonitor.cern.ch/hyperloop/train-run/TRAIN_ID>" target="_blank">https://alimonitor.cern.ch/hyperloop/train-run/TRAIN_ID</a>.
 
 <div align="center">
    <img src="../images/trainRunsPage.png" width="70%">
@@ -137,7 +137,7 @@ title: Operator Documentation
   
 <div align="center">
    <img src="../images/submittedJobs3.png" width="90%">
-</div> 
+</div>
 
 * This information is collected when the masterjobs have finished from all ERROR_V jobs. Some information is already available while the train is running but make sure to check again when the train is in a final state. Common errors are grouped and counted. This allows you to investigate failures and debug them using the provided stack trace.
 
@@ -145,7 +145,7 @@ title: Operator Documentation
 
 <div align="center">
    <img src="../images/gridStats.png" width="70%">
-</div> 
+</div>
 
 * <a name="trainderived"></a>If the train is run as a derived data production and there are activated tables, the Derived data tab will be showed. This displays the tables which are produced by the task and saved to the output.
 
@@ -157,28 +157,28 @@ title: Operator Documentation
 
 <div align="center">
    <img src="../images/mergedOutput.png" width="80%">
-</div> 
+</div>
 
 * When the final merge is started manually by the operator, some of the runs may not be merged. You can copy the list of merged runs or the total list of runs by clicking on the (red) number.
 * Here you can also track the submission process, and debug issues that may have taken place.
 
 <div align="center">
    <img src="../images/mergedOutput1.png" width="90%">
-</div> 
+</div>
 
 * <a name="trainclonetab"></a>You can use the _Clone train_ tab to clone the train. The cloned train will have **the same wagon timestamp** of the original train, with the **current dataset configuration**. This means that if the users have changed the wagon configuration in the meanwhile, this is not taken into account (this is different from the LEGO trains).
 * Other settings can be modified: package tag, target facility, slow train option, derived data, automatic submission.
 
 <div align="center">
    <img src="../images/cloneTrain.png" width="70%">
-</div> 
+</div>
 
 * <a name="longTrain"></a>The _Request long train_ tab allows users to request a long train after the train ran on a linked dataset. Linked datasets are subsets of a big dataset (_set up in the Dataset settings_). First, a train run needs to be **Done on a smaller linked dataset** before being run on a bigger dataset.
-* Any user who is part of the analysis can request a long train. Approval from the participating analyses PWGs conveners is required in order to submit a long train. Train operators or admins can also approve a long train, but it is usually done by the PWG. 
+* Any user who is part of the analysis can request a long train. Approval from the participating analyses PWGs conveners is required in order to submit a long train. Train operators or admins can also approve a long train, but it is usually done by the PWG.
 
 <div align="center">
    <img src="../images/requestLongTrain.png" width="70%">
-</div> 
+</div>
 
 * Once the long train is approved:
   * If Automatic Submission is enabled and the train test finished without memory warning and within the CPU time limit, the train is submitted
@@ -186,13 +186,13 @@ title: Operator Documentation
   
    <div align="center">
     <img src="../images/longTrainApproved.png" width="80%">
-   </div> 
+   </div>
   
   
 ## <a name="trains-with-issues"></a>Trains with issues
 
 * This page displays the list of train runs that are in state _submitted_ but could not be merged due to specific problems:
-  * More than 30% of the jobs have errors 
+  * More than 30% of the jobs have errors
   * The Analysis job has all jobs in a final state, but there is no merging job
   * There is a merging job which is in a final state, but there is no final merge job
   * There is a final merge job in final state, but the merging is not declared as _done_ in the database
@@ -207,9 +207,9 @@ title: Operator Documentation
   
 ## <a name="datasets"></a>Datasets
 
-* The <a href="https://alimonitor.cern.ch/hyperloop/datasets" target="_blank">**Datasets**</a> page displays all the datasets available. The operator can add, remove, activate or deactivate a dataset. 
+* The <a href="https://alimonitor.cern.ch/hyperloop/datasets" target="_blank">**Datasets**</a> page displays all the datasets available. The operator can add, remove, activate or deactivate a dataset.
 
-*  The user can browse and click on the _Dataset_ they want to add to their analysis.
+* The user can browse and click on the _Dataset_ they want to add to their analysis.
 <div align="center">
 <img src="../images/enableDatasetDatasetsPage.png" width="80%">
 </div>
@@ -234,7 +234,7 @@ title: Operator Documentation
 
 * <a name="datasetoptions"></a>In the **Options** box, you can add linked datasets to the current dataset, which will be used for the [**staged submission**](#stagedsubmission). Enabling _Run final merging over all runs in this dataset_ will merge all the runs of all the productions during the final merging.
 * <a name="datasetstaging"></a>In the **Analysis Facility Staging**, the operator is able to stage or unstage the data to the available targets displayed in the dropdown.
-  * Choose a target from the dropdown list, and you will be notified of the amount of data required for the staging process. Confirm by clicking OK. The staging process will start once clicking the _Save all changes_ button at the top right of the page. 
+  * Choose a target from the dropdown list, and you will be notified of the amount of data required for the staging process. Confirm by clicking OK. The staging process will start once clicking the _Save all changes_ button at the top right of the page.
   * You can hover over the staging percentage to get a detailed status of the staging progress. By clicking on the percentage, you will be lead to a new tab where you can see the elaborate overview of the transfer requests on MonALISA.
   * To unstage the data to a specific target, click the _Unstage_ button. The unstaging process will start once clicking _Save all changes_.
 
@@ -284,7 +284,7 @@ title: Operator Documentation
     <img src="../images/changeDatasetProduction.png" width="60%">
   </div>
 
-* The mergelist defines which runs are merged into one file at the end of the train running. The operator can add, update, activate or deactivate a mergelist in the dataset. 
+* The mergelist defines which runs are merged into one file at the end of the train running. The operator can add, update, activate or deactivate a mergelist in the dataset.
 
 ## <a name="deriveddatapage"></a>Derived Data
 
@@ -330,7 +330,7 @@ title: Operator Documentation
 
 ## <a name="stagingstatusapage"></a>Staging status
 
-* Accessed from the **Datasets** view, this page displays the staging status of all the datasets in Hyperloop for which a staging process was initiated. Use it to follow up the progress and check if the staging is completed, ongoing, or if there are any issues. 
+* Accessed from the **Datasets** view, this page displays the staging status of all the datasets in Hyperloop for which a staging process was initiated. Use it to follow up the progress and check if the staging is completed, ongoing, or if there are any issues.
 
 <div align="center">
  <img src="../images/stagingStatusPage.png" width="70%">

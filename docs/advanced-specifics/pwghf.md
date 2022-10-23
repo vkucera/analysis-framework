@@ -5,7 +5,7 @@ title: PWG-HF
 
 # Heavy-flavour (HF) analysis framework
 
-## Get started!
+## Get started
 
 See the materials from the [HF O2 hackathon](https://indico.cern.ch/event/1101005/)
 (includes introduction to O2, O2 HF, tutorials,...) and watch the
@@ -47,7 +47,7 @@ of the HF analyses on [AliHyperloop](https://alimonitor.cern.ch/hyperloop/):
 ## Framework structure
 
 Simplified graph of the workflows and tasks involved in a single HF analysis is shown in the following picture.
-Individual components are decribed in the next section below.
+Individual components are described in the next section below.
 
 <div align="center">
 <img src="../images/pwghf_graph.svg" width="800px" alt="PWGHF analysis framework">
@@ -57,8 +57,8 @@ Individual components are decribed in the next section below.
 
 ### Track index skimming
 
-Workflow | File | Type
---- | --- | ---
+Workflow                                   | File                           | Type
+-------------------------------------------|--------------------------------|------------------------------------
 `o2-analysis-hf-track-index-skims-creator` | `HFTrackIndexSkimsCreator.cxx` | direct 2/3-prong and cascade decays
 
 #### Track and event selection
@@ -79,14 +79,14 @@ together with a flag indicating for which decay channel(s) the candidate was sel
 
 ### Candidate creation and MC matching
 
-Workflow | File | Type
---- | --- | ---
-`o2-analysis-hf-candidate-creator-2prong` | `HFCandidateCreator2Prong.cxx` | direct 2-prong decays
-`o2-analysis-hf-candidate-creator-3prong` | `HFCandidateCreator3Prong.cxx` | direct 3-prong decays
+Workflow                                   | File                            | Type
+-------------------------------------------|---------------------------------|------------------------------------------------------------------------
+`o2-analysis-hf-candidate-creator-2prong`  | `HFCandidateCreator2Prong.cxx`  | direct 2-prong decays
+`o2-analysis-hf-candidate-creator-3prong`  | `HFCandidateCreator3Prong.cxx`  | direct 3-prong decays
 `o2-analysis-hf-candidate-creator-cascade` | `HFCandidateCreatorCascade.cxx` | cascade decays with V<sup>0</sup> daughters (Λ<sub>c</sub><sup>±</sup>)
-`o2-analysis-hf-candidate-creator-xicc` | `HFCandidateCreatorXicc.cxx` | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
-`o2-analysis-hf-candidate-creator-x` | `HFCandidateCreatorX.cxx` | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
-`o2-analysis-hf-candidate-creator-bplus` | `HFCandidateCreatorBPlus.cxx` | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
+`o2-analysis-hf-candidate-creator-xicc`    | `HFCandidateCreatorXicc.cxx`    | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
+`o2-analysis-hf-candidate-creator-x`       | `HFCandidateCreatorX.cxx`       | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
+`o2-analysis-hf-candidate-creator-bplus`   | `HFCandidateCreatorBPlus.cxx`   | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
 
 #### Candidate creation
 
@@ -109,17 +109,17 @@ Derived tables with MC flags used for the estimation of the signal efficiencies 
 
 ### Candidate selection
 
-Workflow | File | Type
---- | --- | ---
-`o2-analysis-hf-d0-candidate-selector` | `HFD0CandidateSelector.cxx` | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
-`o2-analysis-hf-jpsi-candidate-selector` | `HFJpsiCandidateSelector.cxx` | J/ψ → e<sup>+</sup> e<sup>−</sup>/μ<sup>+</sup> μ<sup>−</sup>
-`o2-analysis-hf-x-tojpsipipi-candidate-selector` | `HFXToJpsiPiPiCandidateSelector.cxx` | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
+Workflow                                          | File                                  | Type
+--------------------------------------------------|---------------------------------------|----------------------------------------------------------------------
+`o2-analysis-hf-d0-candidate-selector`            | `HFD0CandidateSelector.cxx`           | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
+`o2-analysis-hf-jpsi-candidate-selector`          | `HFJpsiCandidateSelector.cxx`         | J/ψ → e<sup>+</sup> e<sup>−</sup>/μ<sup>+</sup> μ<sup>−</sup>
+`o2-analysis-hf-x-tojpsipipi-candidate-selector`  | `HFXToJpsiPiPiCandidateSelector.cxx`  | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
 `o2-analysis-hf-dplus-topikpi-candidate-selector` | `HFDplusToPiKPiCandidateSelector.cxx` | D<sup>±</sup> → π<sup>±</sup> K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-lc-candidate-selector` | `HFLcCandidateSelector.cxx` | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-lc-tok0sp-candidate-selector` | `HFLcK0sPCandidateSelector.cxx` | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sub>S</sub><sup>0</sup>
-`o2-analysis-hf-xic-topkpi-candidate-selector` | `HFXicToPKPiCandidateSelector.cxx` | Ξ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-lc-candidate-selector`            | `HFLcCandidateSelector.cxx`           | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-lc-tok0sp-candidate-selector`     | `HFLcK0sPCandidateSelector.cxx`       | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sub>S</sub><sup>0</sup>
+`o2-analysis-hf-xic-topkpi-candidate-selector`    | `HFXicToPKPiCandidateSelector.cxx`    | Ξ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
 `o2-analysis-hf-xicc-topkpipi-candidate-selector` | `HFXiccToPKPiPiCandidateSelector.cxx` | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
-`o2-analysis-hf-bplus-tod0pi-candidate-selector` | `HFBPlusToD0PiCandidateSelector.cxx` | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
+`o2-analysis-hf-bplus-tod0pi-candidate-selector`  | `HFBPlusToD0PiCandidateSelector.cxx`  | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
 
 In a dedicated selector task, tailored for each decay channel, accurate analysis level selection criteria
 based on decay topology and PID are applied to the reconstructed candidates.
@@ -128,20 +128,20 @@ The selection results are stored in a column of a new dedicated table that is la
 
 ### Analysis tasks
 
-Workflow | File | Type
---- | --- | ---
-`o2-analysis-hf-task-d0` | `taskD0.cxx` | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
-`o2-analysis-hf-task-jpsi` | `taskJpsi.cxx` | J/ψ → e<sup>+</sup> e<sup>−</sup>/μ<sup>+</sup> μ<sup>−</sup>
-`o2-analysis-hf-task-dplus` | `taskDPlus.cxx` | D<sup>±</sup> → π<sup>±</sup> K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-task-lc` | `taskLc.cxx` | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-task-lc-tok0sp` | `taskLcK0sP.cxx` | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sub>S</sub><sup>0</sup>
-`o2-analysis-hf-task-xic` | `taskXic.cxx` | Ξ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-task-xicc` | `taskXicc.cxx` | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
-`o2-analysis-hf-task-bplus` | `taskBPlus.cxx` | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
-`o2-analysis-hf-task-x` | `taskX.cxx` | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
-`o2-analysis-hf-hf-correlator-d0d0bar` | `HFCorrelatorD0D0bar.cxx` | D<sup>0</sup>–D<sup>0</sup>bar correlations
+Workflow                                   | File                          | Type
+-------------------------------------------|-------------------------------|-------------------------------------------------------------------------
+`o2-analysis-hf-task-d0`                   | `taskD0.cxx`                  | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
+`o2-analysis-hf-task-jpsi`                 | `taskJpsi.cxx`                | J/ψ → e<sup>+</sup> e<sup>−</sup>/μ<sup>+</sup> μ<sup>−</sup>
+`o2-analysis-hf-task-dplus`                | `taskDPlus.cxx`               | D<sup>±</sup> → π<sup>±</sup> K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-task-lc`                   | `taskLc.cxx`                  | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-task-lc-tok0sp`            | `taskLcK0sP.cxx`              | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sub>S</sub><sup>0</sup>
+`o2-analysis-hf-task-xic`                  | `taskXic.cxx`                 | Ξ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-task-xicc`                 | `taskXicc.cxx`                | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
+`o2-analysis-hf-task-bplus`                | `taskBPlus.cxx`               | B<sup>±</sup> → D<sup>0</sup>(bar) π<sup>±</sup>
+`o2-analysis-hf-task-x`                    | `taskX.cxx`                   | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
+`o2-analysis-hf-hf-correlator-d0d0bar`     | `HFCorrelatorD0D0bar.cxx`     | D<sup>0</sup>–D<sup>0</sup>bar correlations
 `o2-analysis-hf-hf-correlator-dplusdminus` | `HFCorrelatorDplusDminus.cxx` | D<sup>+</sup>–D<sup>−</sup> correlations
-`o2-analysis-hf-task-correlation-ddbar` | `taskCorrelationDDbar.cxx` | D<sup>0</sup>–D<sup>0</sup>bar, D<sup>+</sup>–D<sup>−</sup> correlations
+`o2-analysis-hf-task-correlation-ddbar`    | `taskCorrelationDDbar.cxx`    | D<sup>0</sup>–D<sup>0</sup>bar, D<sup>+</sup>–D<sup>−</sup> correlations
 
 #### Real-data analysis
 
@@ -153,10 +153,10 @@ For MC events, histograms with quantities of generated MC particles and MC-match
 
 ### QA and helper tasks
 
-Workflow | File | Type
---- | --- | ---
-`o2-analysis-hf-mc-validation` | `HFMCValidation.cxx` | validation of HF MC distributions
-`o2-analysis-qa-rejection` | `qaPidRejection.cxx` | PID selection performance
+Workflow                          | File                    | Type
+----------------------------------|-------------------------|----------------------------------
+`o2-analysis-hf-mc-validation`    | `HFMCValidation.cxx`    | validation of HF MC distributions
+`o2-analysis-qa-rejection`        | `qaPidRejection.cxx`    | PID selection performance
 `o2-analysis-hf-sel-optimisation` | `HFSelOptimisation.cxx` | preselection optimisation
 
 ### Tree creation
@@ -164,11 +164,11 @@ Workflow | File | Type
 Candidate tables and other related derived tables are exported to disk as ROOT trees for
 post-processing with external tools, e.g. for optimisation with Machine Learning techniques.
 
-Workflow | File | Type
---- | --- | ---
-`o2-analysis-hf-tree-creator-d0-tokpi` | `HFTreeCreatorD0ToKPi.cxx` | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
-`o2-analysis-hf-tree-creator-lc-topkpi` | `HFTreeCreatorLcToPKPi.cxx` | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
-`o2-analysis-hf-tree-creator-x-tojpsipipi` | `HFTreeCreatorXToJpsiPiPi.cxx` | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
+Workflow                                    | File                            | Type
+--------------------------------------------|---------------------------------|----------------------------------------------------------------------
+`o2-analysis-hf-tree-creator-d0-tokpi`      | `HFTreeCreatorD0ToKPi.cxx`      | D<sup>0</sup>(bar) → π<sup>±</sup> K<sup>∓</sup>
+`o2-analysis-hf-tree-creator-lc-topkpi`     | `HFTreeCreatorLcToPKPi.cxx`     | Λ<sub>c</sub><sup>±</sup> → p(bar) K<sup>∓</sup> π<sup>±</sup>
+`o2-analysis-hf-tree-creator-x-tojpsipipi`  | `HFTreeCreatorXToJpsiPiPi.cxx`  | X(3872) → J/ψ π<sup>±</sup> π<sup>∓</sup>
 `o2-analysis-hf-tree-creator-xicc-topkpipi` | `HFTreeCreatorXiccToPKPiPi.cxx` | Ξ<sub>cc</sub><sup>±±</sup> → Ξ<sub>c</sub><sup>±</sup> π<sup>±</sup>
 
 ## Contribute
@@ -180,15 +180,15 @@ Workflow | File | Type
     and [commenting](https://rawgit.com/AliceO2Group/CodingGuidelines/master/comments_guidelines.html) rules).
 - If your changes consist of several independent steps, keep them separate in several commits.
 - Give your commits meaningful titles.
-    - If needed, add more details in the commit message (separated by a blank line from the commit title).
+  - If needed, add more details in the commit message (separated by a blank line from the commit title).
 - Keep your feature branch up to date with the upstream main branch.
 - Test your code before making a pull request.
-    - Propagate your changes into the Run3Analysisvalidation configuration.
-    - Check that your branch compiles.
-    - Check that your code works and runs without errors and warnings.
-        - Make sure your code is compatible with the expected input (Run 2/3/5, real/MC data, p–p/Pb–Pb).
-        - Check that your changes do not alter unexpectedly the control plots produced by the validation framework.
-    - Make sure your tasks can be fully configured from Run3Analysisvalidation and AliHyperloop.
+  - Propagate your changes into the Run3Analysisvalidation configuration.
+  - Check that your branch compiles.
+  - Check that your code works and runs without errors and warnings.
+    - Make sure your code is compatible with the expected input (Run 2/3/5, real/MC data, p–p/Pb–Pb).
+    - Check that your changes do not alter unexpectedly the control plots produced by the validation framework.
+  - Make sure your tasks can be fully configured from Run3Analysisvalidation and AliHyperloop.
 
 #### Naming conventions
 
@@ -206,11 +206,11 @@ is more readable and sortable than
 - Names of task configurables follow the same conventions as
     [names of variables](https://rawgit.com/AliceO2Group/CodingGuidelines/master/naming_formatting.html#Variable_Names).
 - Names of histograms start with `h` and follow the same conventions as names of variables.
-    - Names of histograms of MC variables have the following suffixes:
-        - `Gen` - generator level quantity of a signal particle
-        - `GenSig` - generator level quantity of a reconstructed signal candidate
-        - `RecSig` - reconstruction level quantity of a reconstructed signal candidate
-        - `RecBg` - reconstruction level quantity of a reconstructed background candidate
+  - Names of histograms of MC variables have the following suffixes:
+    - `Gen` - generator level quantity of a signal particle
+    - `GenSig` - generator level quantity of a reconstructed signal candidate
+    - `RecSig` - reconstruction level quantity of a reconstructed signal candidate
+    - `RecBg` - reconstruction level quantity of a reconstructed background candidate
 
 The device name of a task is automatically generated from the name of the corresponding `struct` by replacing uppercase letters with lowercase letters preceded with a hyphen unless defined explicitly using `TaskName`, which should be avoided if not necessary.
 
@@ -218,16 +218,16 @@ The device name of a task is automatically generated from the name of the corres
 
 - Create one PR per feature (i.e. do not mix big unrelated code changes).
 - Give your PR a short meaningful title.
-    - Add the “PWGHF: ” prefix in the title of your PR.
+  - Add the “PWGHF: ” prefix in the title of your PR.
         (It allows to search for PWGHF-related PRs in the commit history of the main branch.)
-        - Note: If your PR has only one commit, add the prefix also in the commit title
+    - Note: If your PR has only one commit, add the prefix also in the commit title
             (because that is the title that will appear in the history after merging).
 - Give further useful details about your changes in the PR description.
-    - Add links to all related PRs (e.g. O2Physics, O2, AliPhysics, Run3Analysisvalidation) in the PR description.
+  - Add links to all related PRs (e.g. O2Physics, O2, AliPhysics, Run3Analysisvalidation) in the PR description.
 
 #### PR review
 
 - When you implement changes during the review, push them into your branch as new separate commits (with meaningful titles).
 - Do not amend, squash or rebase existing commits in the PR. It would break the links between the code and the review comments.
-    - If you need to update your branch with the changes in the main branch, use `merge` instead of `rebase` to preserve the commit history.
+  - If you need to update your branch with the changes in the main branch, use `merge` instead of `rebase` to preserve the commit history.
 - Fix formatting issues by merging the PRs created automatically by the CI tests in your fork repository.
