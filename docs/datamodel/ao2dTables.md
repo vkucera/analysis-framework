@@ -4,6 +4,7 @@ title: AO2D tables
 ---
 
 <a name="AO2D"></a>
+
 # List of tables defined in the AO2D data files
 
 The tables which are extracted from the AO2D files are declared in <a href="https://github.com/AliceO2Group/AliceO2/blob/dev/Framework/Core/include/Framework/AnalysisDataModel.h" target="_blank">Framework/AnalysisDataModel.h</a> and listed below. They are available by default when using an AO2D file as input to an analysis work flow.
@@ -14,6 +15,7 @@ Click on the labels to display the table content. Click buttons to
 <!-- Block with AO2D tables -->
 
 #### AO2D files
+
 For better overview the tables are grouped into the following categories: | [General](#cat_General) | [Tracks](#cat_Tracks) | [Detectors](#cat_Detectors) | [Strangeness](#cat_Strangeness) | [Indices](#cat_Indices) | [MonteCarlo](#cat_MonteCarlo) | [Run2](#cat_Run2) | [Others](#cat_Others) |
 
 <div>
@@ -74,7 +76,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Timestamps</button>
   <div class="panel">
     <div>
@@ -105,7 +106,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Collisions</button>
   <div class="panel">
@@ -428,7 +428,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::TracksIU (E)</button>
   <div class="panel">
     <div>
@@ -597,7 +596,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::TracksCov (E)</button>
   <div class="panel">
@@ -839,7 +837,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::TracksCovIU (E)</button>
   <div class="panel">
     <div>
@@ -1078,7 +1075,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::TracksExtra (E)</button>
   <div class="panel">
@@ -1350,7 +1346,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredTracks</button>
   <div class="panel">
     <div>
@@ -1489,7 +1484,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredTracksIU</button>
   <div class="panel">
     <div>
@@ -1621,7 +1615,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredTracksCov</button>
   <div class="panel">
     <div>
@@ -1746,7 +1739,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredTracksCovIU</button>
   <div class="panel">
     <div>
@@ -1870,7 +1862,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredTracksExtra</button>
   <div class="panel">
@@ -2122,7 +2113,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::MFTTracks (E)</button>
   <div class="panel">
     <div>
@@ -2285,7 +2275,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredMFTTracks</button>
   <div class="panel">
     <div>
@@ -2416,7 +2405,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FwdTracks (E)</button>
   <div class="panel">
@@ -2659,7 +2647,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FwdTracksCov (E)</button>
   <div class="panel">
     <div>
@@ -2901,7 +2888,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredFwdTracks</button>
   <div class="panel">
     <div>
@@ -3110,7 +3096,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredFwdTracksCov</button>
   <div class="panel">
     <div>
@@ -3235,7 +3220,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::AmbiguousTracks</button>
   <div class="panel">
     <div>
@@ -3281,7 +3265,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::AmbiguousMFTTracks</button>
   <div class="panel">
     <div>
@@ -3326,7 +3309,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::AmbiguousFwdTracks</button>
   <div class="panel">
@@ -3443,7 +3425,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FT0s</button>
   <div class="panel">
     <div>
@@ -3538,7 +3519,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FDDs_000</button>
   <div class="panel">
     <div>
@@ -3606,7 +3586,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FDDs_001</button>
   <div class="panel">
@@ -3681,7 +3660,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Calos</button>
   <div class="panel">
     <div>
@@ -3755,7 +3733,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::CaloTriggers</button>
   <div class="panel">
     <div>
@@ -3821,7 +3798,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Zdcs</button>
   <div class="panel">
@@ -3973,7 +3949,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::FV0Cs</button>
   <div class="panel">
     <div>
@@ -4032,7 +4007,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::HMPIDs</button>
   <div class="panel">
@@ -4144,7 +4118,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::V0s_001</button>
   <div class="panel">
     <div>
@@ -4197,7 +4170,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Cascades_000</button>
   <div class="panel">
     <div>
@@ -4237,7 +4209,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Cascades_001</button>
   <div class="panel">
@@ -4356,7 +4327,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run3MatchedSparse (I)</button>
   <div class="panel">
     <div>
@@ -4423,7 +4393,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::MatchedBCCollisionsExclusive (I)</button>
   <div class="panel">
     <div>
@@ -4457,7 +4426,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::MatchedBCCollisionsSparse (I)</button>
   <div class="panel">
     <div>
@@ -4490,7 +4458,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run3MatchedToBCExclusive (I)</button>
   <div class="panel">
@@ -4545,7 +4512,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run3MatchedToBCSparse (I)</button>
   <div class="panel">
@@ -4691,7 +4657,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McParticles_000 (E)</button>
   <div class="panel">
@@ -4913,7 +4878,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McParticles_001 (E)</button>
   <div class="panel">
     <div>
@@ -5125,7 +5089,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredMcParticles_000</button>
   <div class="panel">
     <div>
@@ -5306,7 +5269,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::StoredMcParticles_001</button>
   <div class="panel">
     <div>
@@ -5473,7 +5435,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McTrackLabels</button>
   <div class="panel">
     <div>
@@ -5513,7 +5474,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McMFTTrackLabels</button>
   <div class="panel">
     <div>
@@ -5551,7 +5511,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McFwdTrackLabels</button>
   <div class="panel">
@@ -5591,7 +5550,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McCaloLabels</button>
   <div class="panel">
     <div>
@@ -5630,7 +5588,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::McCollisionLabels</button>
   <div class="panel">
     <div>
@@ -5668,7 +5625,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::HepMCXSections</button>
   <div class="panel">
@@ -5749,7 +5705,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::HepMCPdfInfos</button>
   <div class="panel">
@@ -5858,7 +5813,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::HepMCHeavyIons</button>
   <div class="panel">
@@ -6108,7 +6062,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run2MatchedExclusive (I)</button>
   <div class="panel">
     <div>
@@ -6176,7 +6129,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run2MatchedSparse (I)</button>
   <div class="panel">
@@ -6250,7 +6202,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Run2MatchedToBCSparse (I)</button>
   <div class="panel">
@@ -6377,7 +6328,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::Origins</button>
   <div class="panel">
     <div>
@@ -6416,7 +6366,6 @@ For better overview the tables are grouped into the following categories: | [Gen
     </table>
   </div>
 
-
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::MatchedBCCollisionsExclusiveMulti (I)</button>
   <div class="panel">
     <div>
@@ -6449,7 +6398,6 @@ For better overview the tables are grouped into the following categories: | [Gen
       </tr>
     </table>
   </div>
-
 
   <button class="myaccordion"><i class="fa fa-table"></i> o2::aod::MatchedBCCollisionsSparseMulti (I)</button>
   <div class="panel">
