@@ -53,10 +53,12 @@ A draft pull request can later be turned into a normal PR using the
 button.
 
 __Keep pull requests small and focused.__
+
 - Create one PR per feature, i.e. do not mix big unrelated code changes (e.g. add a new workflow file and add histograms in another workflow).
 - Keep in mind that the larger a PR is, the longer it takes to review it, especially when a new workflow is being added.
 
 __Give your pull request a short and meaningful title.__
+
 - The title should be informative enough to give an idea of _what_ was changed and _where_.
 - Further details (e.g. _why_ this change is needed, related links) can be provided in the description below the title.
 - It is useful to put the PWG name at the beginning of the PR title to specify the scope of the changes, which makes it easier to filter PRs related to the PWG in the PR history and also in the commit history of the main branch.
@@ -89,6 +91,7 @@ As GitHub does not allow a code owner to approve their own PR, a workaround usin
 ```
 
 When you implement changes during the review, push them into your branch as additional separate commits with meaningful titles on top of the existing commits.
+
 - Do not amend, squash or rebase existing commits in the PR (unless asked to do so by the code owners)!
   You would have to force the push to update your branch which would overwrite the commit history, break the links between the code and the review comments and make the PR review more messy.
   - If you need to update your branch with the changes in the main branch while the PR is under review, use `git merge upstream/master` (instead of rebasing) to preserve the commit history.
