@@ -17,6 +17,7 @@ Developers can review project history to find out:
 An introduction to Git can be be found within the [Git-Documentation](https://docs.github.com/en/get-started/using-git).
 
 Within the documentation there is an overview about:
+
 - About Git
 - Pushing commits to a remote repository
 - Getting changes from a remote repository
