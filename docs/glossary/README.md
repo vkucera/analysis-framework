@@ -33,6 +33,13 @@ configurable <a id="configurable" />
 Implemented as a task member of type `Configurable`.
 Can be set via [JSON](#json) configuration.
 
+process function <a id="process-function" />
+: [task](#task) method, which subscribes to [tables](#table) (i.e. consumes them as input) and performs some operations with their content (e.g. fills output tables or histograms)
+
+process function switch <a id="process-function-switch" />
+: [task](#task) parameter, which allows to enable and disable execution of a given [process function](#process-function).
+Can be set via [JSON](#json) configuration.
+
 device (DPL device) <a id="device" />
 : execution sub-unit of a [workflow](#workflow).
 Implemented as a [task](#task).
@@ -88,8 +95,8 @@ grouping <a id="grouping" />
 filtering <a id="filtering" />
 : filtering
 
-paritioning <a id="paritioning" />
-: paritioning
+partitioning <a id="partitioning" />
+: partitioning
 
 slicing <a id="slicing" />
 : slicing
