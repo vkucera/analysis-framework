@@ -29,7 +29,7 @@ task <a id="task" />
 A task is executed as a [device](#device) of a [workflow](#workflow).
 
 configurable <a id="configurable" />
-: a [task](#task) parameter, whose value can be set without editing the code of the task.
+: [task](#task) parameter, whose value can be set without editing the code of the task.
 Implemented as a task member of type `Configurable`.
 Can be set via [JSON](#json) configuration.
 
@@ -39,7 +39,16 @@ Implemented as a [task](#task).
 The device name is generated from the task name, unless it is provided explicitly, using `TaskName("device-name")` as an argument of `adaptAnalysisTask`.
 
 workflow (DPL workflow) <a id="workflow" />
-: execution unit in [DPL](#dpl), consisting of one or several [devices](#device), implemented as a C++ `.cxx` file, compiled into a single executable binary file
+: execution unit in [DPL](#dpl), consisting of one or several [devices](#device).
+Implemented as a C++ `.cxx` file, compiled into a single executable binary file.
+The workflow name is generated from the arguments of the `o2physics_add_dpl_workflow` function in the `CMakeLists.txt` file.
+For workflows files located `PWG..` directories, a corresponding prefix is added: `o2-<component>-[<pwg>-]<name>`
+
+Example: `o2-analysis-hf-task-d0`
+
+- `<component>` is `analysis`, derived from `COMPONENT_NAME Analysis`,
+- `<pwg>` is `hf`, derived from the `PWGHF` directory name,
+- `<name>` is `task-d0`, provided in `o2physics_add_dpl_workflow(task-d0`.
 
 workflow topology <a id="workflow-topology" />
 : the connection between running [workflows](#workflow), based on their [inputs](#table) and outputs
@@ -55,7 +64,7 @@ static column <a id="static-column" />
 : [table](#table) column, which stores a value provided when it is filled.
 
 dynamic column <a id="dynamic-column" />
-: [table](#table) column, which behaves as a function of other (static or expression) column of the same table.
+: [table](#table) column, which behaves as a function of other (static or expression) columns of the same table.
 Its value is calculated only when the [column getter](#column-getter) is called.
 
 expression column <a id="expression-column" />
@@ -65,7 +74,7 @@ index column <a id="index-column" />
 : [table](#table) column, which stores the index of a row in a table
 
 column getter <a id="column-getter" />
-: method that return the value stored in the column
+: method that returns the value stored in the column
 
 data model <a id="table" />
 : collection of [table](#table) definitions.
