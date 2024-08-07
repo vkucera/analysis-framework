@@ -11,7 +11,8 @@ O<sup>2</sup> <a id="o2" />
 : online-offline
 
 DPL <a id="dpl" />
-: data processing layer
+: Data Processing Layer
+: core [O<sup>2</sup>](#o2) framework for data processing (built on top of FairMQ)
 
 Arrow <a id="arrow" />
 : format in which [tables](#table) are processed in [O<sup>2</sup>](#o2)
@@ -19,8 +20,36 @@ Arrow <a id="arrow" />
 JSON <a id="json" />
 : format used for configuration of [devices](#device)
 
+## Data reconstruction
+
+timeframe <a id="timeframe" />
+: timeframe
+: snapshot of detector data over a given time window (10-20 ms)
+
+dataframe <a id="dataframe" />
+: dataframe
+
+FLP <a id="flp" />
+: First Level Processor
+
+EPN <a id="epn" />
+: Event Processing Node
+
+PDP <a id="pdp" />
+: PDP?
+
+collision <a id="collision" />
+: reconstructed primary vertex
+
+## Data structures
+
 AO2D <a id="ao2d" />
 : format of saving [tables](#table) in ROOT files
+
+table <a id="table" />
+: data format, storing a collection of columns for each entry (table row).
+Rows represent objects of the given table type and columns represent properties of these objects.
+A table definition defines a C++ type and therefore must be unique.
 
 ## Workflows
 
@@ -61,11 +90,6 @@ workflow topology <a id="workflow-topology" />
 
 ## Table content
 
-table <a id="table" />
-: data format, storing a collection of columns for each entry (table row).
-Rows represent objects of the given table type and columns represent properties of these objects.
-A table definition defines a C++ type and therefore must be unique.
-
 static column <a id="static-column" />
 : [table](#table) column, which stores a value provided when it is filled.
 : Example: The `Collisions` table of collisions has a static column `PosZ` which stores the value of the _z_ coordinate of the primary vertex.
@@ -74,7 +98,7 @@ The value has to be provided when a new collision row is being added in the tabl
 dynamic column <a id="dynamic-column" />
 : [table](#table) column, which behaves as a function of other (static or expression) columns of the same table.
 Its value is calculated only when the [column getter](#column-getter) is called.
-Dynamic column definitions can have free parameters, which have to be provided as arguments of the getter.
+: Dynamic column definitions can have free parameters, which have to be provided as arguments of the getter.
 Values of dynamic columns are not written in [AO2D](#ao2d) files and cannot be used for table [filtering](#filtering).
 : Example: The `Tracks` table of tracks has a dynamic column `Px`, representing the _x_ component of the track momentum, defined as a function of other static columns.
 It's value is calculated every time the corresponding `px` getter is called.
@@ -88,17 +112,17 @@ All values of the `Phi` column are calculated for all tracks together (in bulk) 
 index column <a id="index-column" />
 : [table](#table) column, which stores the index of a table row
 : Example: The `Tracks` table of tracks has an index column pointing to rows of the `Collisions` table, which links each track to its collision.
-Calling the `collision` getter returns an iterator pointing to a given collision.
-Calling the `collisionId` getter returns the value of the index itself (i.e. the position of the row in the `Collisions` table).
+: Calling the `collision` getter returns an iterator pointing to a given collision.
+: Calling the `collisionId` getter returns the value of the index itself (i.e. the position of the row in the `Collisions` table).
 
 column getter <a id="column-getter" />
-: method that returns the value stored in the column
+: method that returns the value stored in the column.
 : Example: The value of the transverse momentum of a given `track` in the `Tracks` table is stored in the `Pt` column.
 This value can be obtained by calling the corresponding `pt` getter as `track.pt()`.
 
 data model <a id="table" />
 : collection of [table](#table) definitions.
-Usually defined in header files in [`DataModel`](../gettingstarted/theo2physicsrepo.md#folder-structure) directories.
+: Usually defined in header files in [`DataModel`](../gettingstarted/theo2physicsrepo.md#folder-structure) directories.
 
 ## Table operations
 
