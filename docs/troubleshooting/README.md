@@ -101,7 +101,7 @@ If the missing table is not mentioned there, try to find the missing workflow fo
   - If the missing table is the **new** version, it indicates that you are not running the corresponding converter while you should. **Add** it.
 
 | Old                            | New               | Converter                                 |
-| ------------------------------ | ----------------- | ----------------------------------------- |
+|--------------------------------|-------------------|-------------------------------------------|
 | `bc`                           | `bc_001`          | `o2-analysis-bc-converter`                |
 | `collision`                    | `collision_001`   | `o2-analysis-collision-converter`         |
 | `fdd`                          | `fdd_001`         | `o2-analysis-fdd-converter`               |
