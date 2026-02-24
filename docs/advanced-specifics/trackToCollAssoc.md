@@ -52,10 +52,10 @@ Let's define $$BC_{track}$$ the BC of the middle of the readout window of the tr
 
 In the AO2D files, $$BC_{track}$$ = `track.collision().bc() + track.trackTime() / o2::constants::lhc::LHCBunchSpacingNS;`
 
-The cut applied on the BC difference $$\lvert BC_{track}-$BC_{coll} \rvert$$
+The cut applied on the BC difference $$\lvert BC_{track}-BC_{coll} \rvert$$
 is the following:
 
-$$\lvert BC_{track}-$BC_{coll} \rvert$$ < `bcWindowForOneSigma * nSigmaForTimeCompat + timeMargin / o2::constants::lhc::LHCBunchSpacingNS;`
+$$\lvert BC_{track}-BC_{coll} \rvert$$ < `bcWindowForOneSigma * nSigmaForTimeCompat + timeMargin / o2::constants::lhc::LHCBunchSpacingNS;`
 
 With `bcWindowForOneSigma`, `nSigmaForTimeCompat` and `timeMargin` being configurable variables.
 
@@ -63,7 +63,7 @@ These variables must be cautiously configured to avoid eliminating possible time
 
 If $$coll$$ passes this cut, then a stricter cut on the time difference between the collision and the track is applied, as will be described below.
 
-The cut is different for tracks which come from detectors with readout windows and for detectors that detect track with a gaussian-like time precision.
+The cut is different for tracks which come from detectors with readout windows and for detectors that detect tracks with a gaussian-like time precision.
 
 For detectors that collect tracks in readout windows such as the ITS and the MFT, $$t_{track}$$ is the middle of the track readout window in $$ns$$. Its associated time uncertainty is $$\sigma_{track}=\frac{\text{readout window duration}}{2}$$. $$t_{track}$$ is then associated to a box-like time error, and meaning that the track crossed the detector in the time range $$[t_{track}-\sigma_{track}, t_{track}+\sigma_{track}]$$
 
