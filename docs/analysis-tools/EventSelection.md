@@ -278,6 +278,7 @@ Additional effect takes place at the **beginning of the next TF**, where the rec
   - this causes a sharp drop in ITS cluster and track counts at ROF edges.
 - The effect is **particle-dependent**, e.g. protons (larger dE/dx) are recorded earlier than pions—leading to small PID-dependent distortions near borders.
 
+
 **Mitigation in event selection**
 - The selection bit `kNoITSROFrameBorder` rejects events near ITS ROF edges:
   - removes collisions within  **10 BCs** at the beginning and **20 BCs** at the end of each ROF
@@ -288,11 +289,23 @@ Additional effect takes place at the **beginning of the next TF**, where the rec
   ```
 - Note that this cut also helps to remove collisions at the ROF borders in the MFT detector (where the same chips as in the ITS are used, and the MFT ROFs are time-aligned with the ITS ROFs).
 
+The effect on <nITSclusters> per track in Data and MC is shown in the following example figure:
+
+<div align="center">
+<img src="ROF_border_pp_data_vs_MC.png" width="60%">
+</div>
+
+The "position" of the dip varies slightly in different runs, but it's always in the BC range -20...+10 wrt nominal ROF border.
+In MC, the effect is simulated via a chip response function, and the magnitude is visibly underestimated (in some PWGs, there was a recommendation to bypass the ```kNoITSROFrameBorder``` selection to keep more statistics for MC).
+
+
 More details on the TF and ROF border effects and cuts can be found e.g. in slides 2-17 of [presentation (November 2024)](https://indico.cern.ch/event/1453901/timetable/#6-event-selection-in-run3).
 
 
 ### Integration into event selection
 - Since April 2024, both the **Time Frame border** and **ITS Readout Frame border** cuts are combined with the ``kIsTriggerTVX`` condition via logical _and_ in the `sel8` event-selection bit, ensuring events used for analysis are free from TF and ROF boundary artifacts.
+
+Please note that for pp 2026 data the so-called cross-ROF reconstruction will be used for the ITS, so the ```kNoITSROFrameBorder``` will be excluded from `sel8` for the pp 2026 periods (data and MC).
 
 ## Occupancy estimation
 
