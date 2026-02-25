@@ -305,7 +305,7 @@ More details on the TF and ROF border effects and cuts can be found e.g. in slid
 ### Integration into event selection
 - Since April 2024, both the **Time Frame border** and **ITS Readout Frame border** cuts are combined with the ``kIsTriggerTVX`` condition via logical _and_ in the `sel8` event-selection bit, ensuring events used for analysis are free from TF and ROF boundary artifacts.
 
-Please note that for pp 2026 data the so-called cross-ROF reconstruction will be used for the ITS, so the ```kNoITSROFrameBorder``` will be excluded from `sel8` for the pp 2026 periods (data and MC).
+Please note that for pp 2026 data the so-called cross-ROF reconstruction will be used for the ITS, so the **ITS Readout Frame border** cut (i.e. the ```kNoITSROFrameBorder``` bit) will be excluded from `sel8` for the pp 2026 periods (data and MC).
 
 ## Occupancy estimation
 
