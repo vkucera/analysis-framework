@@ -289,14 +289,14 @@ Additional effect takes place at the **beginning of the next TF**, where the rec
   ```
 - Note that this cut also helps to remove collisions at the ROF borders in the MFT detector (where the same chips as in the ITS are used, and the MFT ROFs are time-aligned with the ITS ROFs).
 
-The effect on <nITSclusters> per track in Data and MC is shown in the following example figure:
+The effect on ```<nITSclusters>``` per track in Data and MC is shown in the following example figure:
 
 <div align="center">
-<img src="ROF_border_pp_data_vs_MC.png" width="60%">
+<img src="ROF_border_pp_data_vs_MC.png" width="80%">
 </div>
 
 The "position" of the dip varies slightly in different runs, but it's always in the BC range -20...+10 wrt nominal ROF border.
-In MC, the effect is simulated via a chip response function, and the magnitude is visibly underestimated (in some PWGs, there was a recommendation to bypass the ```kNoITSROFrameBorder``` selection to keep more statistics for MC).
+In MC, the effect is simulated via a chip response function, and the magnitude is visibly underestimated (in some PWGs, there was a recommendation to bypass the ```kNoITSROFrameBorder``` selection to keep more events in MC for analysis).
 
 
 More details on the TF and ROF border effects and cuts can be found e.g. in slides 2-17 of [presentation (November 2024)](https://indico.cern.ch/event/1453901/timetable/#6-event-selection-in-run3).
