@@ -601,17 +601,19 @@ It is possible that a wagon test or train test will produce multiple warnings. I
 
 ## <a name="train-slots-per-week"></a>Train slots per week
 
-For a given analysis, every dataset has a train slots per week limit. This limit is shown in the dataset under 'Maximal train slots per analysis per week'. This limit is to ensure fair usage of resources, and is calculated on a rolling basis. You may view how many slots have been used here:
+For a given analysis, every dataset has a train slots per week limit. This limit is shown in the dataset under 'Maximal train slots per analysis per week'. If an analyzer uses the same dataset across multiple analyses, the calculation (for the analyzer only) is the summed slots across analyses. 
+
+These limits ensure fair usage of resources, and are calculated on a rolling basis. You may view how many slots have been used for a dataset from the wagon table in My Analyses:
 
 <div align="center">
-<img src="../images/trainSlots.png" width="60%">
+<img src="../images/trainSlotsPerUserPerAnalysis.png" width="60%">
 </div>
 
 
-Trains may use more than one slot. The number of slots is calculated as the number of wagons from the analysis in the train, capped by the number of cores that the train runs with. The slots used per analysis may be viewed in the train 'Test - Full Test' tab:
+Trains may use more than one slot. The number of slots is calculated as the number of wagons from the analysis in the train, capped by the number of cores that the train runs with. The slots used per analysis may be viewed in the train 'Test - Full Test' tab, where also the time when the train will stop counting towards the quota is shown:
 
 <div align="center">
-<img src="../images/weeklySlots.png" width="60%">
+<img src="../images/weeklySlots.png" width="70%">
 </div>
 
 If a single user wagon needs more memory than available in a single core queue, it can still be composed by hyperloop to the two core queue but it will count as a **heavy wagon**. Heavy wagons count as two slots. These wagons are listed in red in the train 'Test - Per Wagon' tab:
