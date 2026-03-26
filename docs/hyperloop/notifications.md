@@ -9,13 +9,13 @@ title: Notifications
 * The notifications can be seen in the _My Analyses_ page and in the _Notifications_ page, by clicking `🔔` in the menu bar.
 
 <div align="center">
-    <img src="../images/notificationsMyAnalyses.png" width="90%">
+    <img src="../images/notificationsMyAnalyses.png" width="90%" alt="Screenshot of notifications in my analyses">
 </div>
 
 * The user can click the `✖️` button to remove a notification. In order to remove all the notifications, go to the Notifications page, and click the `❌`_Dismiss all_ button.
 
 <div align="center">
-    <img src="../images/allNotifications.png" width="90%">
+    <img src="../images/allNotifications.png" width="90%" alt="Screenshot of all notifications">
 </div>
 
 ## <a name="datasetChanged"></a>Dataset changed
@@ -27,7 +27,7 @@ title: Notifications
   * The automatic composition settings have changed, e.g. the schedule
 
 <div align="center">
-    <img src="../images/datasetChanged.png" width="90%">
+    <img src="../images/datasetChanged.png" width="90%" alt="Screenshot of dataset changed">
 </div>
 
 ## <a name="datasetActivated"></a>Dataset activated / deactivated
@@ -35,7 +35,7 @@ title: Notifications
 * Notifies the user when a dataset included in his or her analyses has been successfully activated or deactivated.
 
 <div align="center">
-    <img src="../images/datasetActivation.png" width="90%">
+    <img src="../images/datasetActivation.png" width="90%" alt="Screenshot of dataset activation">
 </div>
 
 ## <a name="productionAdded"></a>Dataset production added or removed
@@ -43,17 +43,17 @@ title: Notifications
 * For RUN 3 data and MC, the user is informed if the production has been successfully added to or removed from the dataset.
 
 <div align="center">
-    <img src="../images/productionAdded.png" width="90%">
+    <img src="../images/productionAdded.png" width="90%" alt="Screenshot of production added">
 </div>
 
 * For RUN 2 data, the user is notified when a conversion train run has been added to or removed from the dataset.
 
 <div align="center">
-  <img src="../images/trainrunAdded.png" width="90%">
+  <img src="../images/trainrunAdded.png" width="90%" alt="Screenshot of trainrun added">
 </div>
 
 <div align="center">
-  <img src="../images/trainrunRemoved.png" width="90%">
+  <img src="../images/trainrunRemoved.png" width="90%" alt="Screenshot of trainrun removed">
 </div>
 
 * For derived data, a notification is sent when a Hyperloop train that produced derived data has been added or removed.
@@ -63,7 +63,7 @@ title: Notifications
 * The user is informed when a run has been added to or removed from the DPG runlist. This change is usually done by the DPG experts.
 
 <div align="center">
-  <img src="../images/runlistUpdated.png" width="90%">
+  <img src="../images/runlistUpdated.png" width="90%" alt="Screenshot of runlist updated">
 </div>
 
 ## <a name="mergelistUpdate"></a>Mergelist updated
@@ -71,7 +71,7 @@ title: Notifications
 * The mergelist defines which runs are merged into one file at the end of the train running. The user is informed when a mergelist has been modified, added to or removed from the dataset production.
 
 <div align="center">
-  <img src="../images/mergelistUpdate.png" width="90%">
+  <img src="../images/mergelistUpdate.png" width="90%" alt="Screenshot of mergelist update">
 </div>
 
 ## <a name="linkedDataset"></a>Short datasets
@@ -89,7 +89,7 @@ Informs the user when a wagon has been disabled in different circumstances:
 * Local tests are cleaned if the wagons are not submitted in a period of 4 weeks. The user is notified that the respective wagons are automatically disabled.
 
 <div align="center">
-  <img src="../images/testCleaned.png" width="90%">
+  <img src="../images/testCleaned.png" width="90%" alt="Screenshot of test cleaned">
 </div>
 
 * When a wagon with derived data output is enabled, the test cannot start if the wagon and its dependencies share the same workflow. As a result, the wagon is disabled and the user is notified about the wagons which share the same task.
@@ -97,7 +97,7 @@ Informs the user when a wagon has been disabled in different circumstances:
   * The notification format is: The wagon _"wagon_name"_ was disabled in _"dataset_name"_. There is derived data. The following wagons have the same workflows {_wagon1_, _wagon2_: _common_workflow_},...,{_wagonX_, _wagonY_: _common_workflow_}
 
   <div align="center">
-    <img src="../images/wagonDisabled1.png" width="90%">
+    <img src="../images/wagonDisabled1.png" width="90%" alt="Screenshot of wagon disabled 1">
   </div>
 
 * If among the wagon and its dependencies there are identical derived data outputs, the test cannot start, and the wagon is disabled.
@@ -105,24 +105,22 @@ Informs the user when a wagon has been disabled in different circumstances:
   * The notification format is:  The wagon _"wagon_name"_ was disabled in _"dataset_name"_. The following wagons have the same derived data outputs {_wagon1_, _wagon2_: _common_derived_data_},...,{_wagonX_, _wagonY_: _common_derived_data_}
 
   <div align="center">
-    <img src="../images/wagonDisabled.png" width="90%">
+    <img src="../images/wagonDisabled.png" width="90%" alt="Screenshot of wagon disabled">
   </div>
-  
+
 * The wagon is disabled if the workflow name has been changed in the meantime. This is fixed by updating the workflow name in the wagon configuration.
 
   <div align="center">
-    <img src="../images/notificationWorkflow.png" width="90%">
+    <img src="../images/notificationWorkflow.png" width="90%" alt="Screenshot of notification workflow">
   </div>
 
 * The wagon is disabled if one of the user defined dependencies of the wagon is considered identical to a service wagon. In order to most efficiently make use of the Grid and the analysis factilities, copies of core services are not permitted as it prevents combining several users into one train.
 
   <div align="center">
-    <img src="../images/notificationIdenticalWagon.png" width="90%">
+    <img src="../images/notificationIdenticalWagon.png" width="90%" alt="Screenshot of notification of identical wagon">
   </div>
 
     A service wagon is considered identical to a user wagon if it shares the same activated output tables, the same workflow, and it has matching configurables. To fix this error, please use the listed service wagon as a dependency instead of the copy.
-
-
 
 ## <a name="inconsistentParameters"></a>Inconsistent parameters
 
@@ -131,13 +129,13 @@ Informs the user when a wagon has been disabled in different circumstances:
 * The user is notified if there is a configurable present in the wagon configuration that is not defined in O2 for the selected package tag tag. Likewise, it informs the user when the wagon configuration misses one or more of the Configurables defined in O2 for the specific tag.
 
   <div align="center">
-    <img src="../images/inconsistentParameters2.png" width="90%">
+    <img src="../images/inconsistentParameters2.png" width="90%" alt="Screenshot of inconsistent parameters 2">
   </div>
 
 * If the **wagon configuration is old**, and the wagon is enabled with the latest package tag, the user is advised to sync the wagon in order to get the present configuration. Following this, the test will start automatically. Likewise, the test is reset whenever there is a change in the database, such as updating or syncing the wagon configuration or its dependencies.
 
   <div align="center">
-    <img src="../images/inconsistentParameters.png" width="90%">
+    <img src="../images/inconsistentParameters.png" width="90%" alt="Screenshot of inconsistent parameters">
   </div>
 
 * If the **wagon is enabled with an older tag**, the configuration might not match (hence the notification). If the old tag is needed, then syncing is not an option because this will set the package to the latest one. Therefore, the wagon configuration has to be modified as needed. The user can take as a reference _full_config.json_ in the test output, which shows the configuration the test is being run with, and compare it to the wagon configuration.

@@ -17,7 +17,7 @@ title: For the Run 2 LEGO train expert. What has changed?
 * There is a history feature for wagons and datasets. You can access it by clicking on the button `📜` available inside of a wagon/dataset view. A detailed view of what has been created/updated/removed from the wagon/dataset is shown, as well as the username and the time when the change was made.
 
 <div align="center">
-<img src="../images/datasetHistory.png" width="100%">
+<img src="../images/datasetHistory.png" width="100%" alt="Screenshot of dataset history">
 </div>
 
 * There are automated notifications. These notifications are created per user, and display changes made to tools, like _Datasets_, that are being used by the user. They are displayed per _Analysis_ in the _My Analyses_ page, or globally in the button `🔔` which can be found on the top menu.
@@ -31,5 +31,5 @@ title: For the Run 2 LEGO train expert. What has changed?
 * **Performance Graphs** page allows the user to upload his own local metrics file, and then generate the test graphs specific to that file. You produce a local _performanceMetrics.json_ by running the o2 workflow with the argument _--resources-monitoring 2_ which, in this example, produces monitoring information every 2 seconds. These are the same type of graphs produced in the _Test Graphs_ tab of the train run. This page can be accessed at: <https://alimonitor.cern.ch/hyperloop/performance-graphs>.
 
 <div align="center">
-<img src="../images/performanceGraphs.png" width="100%">
+<img src="../images/performanceGraphs.png" width="100%" alt="Screenshot of performance graphs">
 </div>
