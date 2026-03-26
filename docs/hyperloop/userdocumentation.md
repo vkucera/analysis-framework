@@ -7,10 +7,10 @@ title: User Documentation
 
 When opening a page in Hyperloop which has not been visited before, a guided tour will explain key concepts. These tours provide an interactive learning experience for Hyperloop, easily activated with a single click. They are ideal for beginners and for refreshing knowledge.
 
-Where appropriate, when one tour ends, the next will begin to explain the next section of Hyperloop. Tours can be exited at any time. Once closed, they will not automatically begin on future page visits. 
+Where appropriate, when one tour ends, the next will begin to explain the next section of Hyperloop. Tours can be exited at any time. Once closed, they will not automatically begin on future page visits.
 
 <div align="center">
-<img src="../images/JoyrideWelcome.png" width="35%">
+<img src="../images/JoyrideWelcome.png" width="35%" alt="Screenshot of joyride welcome">
 </div>
 
 ### <a name="tour-elements"></a>Tour Elements
@@ -18,13 +18,13 @@ Where appropriate, when one tour ends, the next will begin to explain the next s
 * Each element of Hyperloop with a tour includes a tour 🚌 button. Clicking this button initiates the tour.
 
 <div align="center">
-<img src="../images/JoyrideTourIcon.png" width="40%">
+<img src="../images/JoyrideTourIcon.png" width="40%" alt="Screenshot of joyride tour icon">
 </div>
 
 * Each tour step includes a _Next_ button to access the next step of the tour. The page will automatically scroll to and highlight the next element to be explained. Also displayed is the current step number and total number of steps in the tour.
 
 <div align="center">
-<img src="../images/JoyrideNextButton.png" width="10%">
+<img src="../images/JoyrideNextButton.png" width="10%" alt="Screenshot of joyride next button">
 </div>
 
 * Each tour step additionally includes an exit button. Clicking this closes the tour. After clicking this, the tour of the given section will not automatically open on future visits to the section of Hyperloop. To access the tour of the section again, the relevant tour 🚌 button must be clicked.
@@ -53,7 +53,7 @@ The _Service wagons_ are wagons which are dependencies to other wagons. They are
 Using the _My Analyses_ page, inside of the _Analysis_ you want to add the wagon to, click on `✚ Add new wagon`.
 
 <div align="center">
-<img src="../images/newwagon.png" width="60%">
+<img src="../images/newwagon.png" width="60%" alt="Screenshot of new wagon">
 </div>
 
 There are 2 parameters required to create a new wagon:
@@ -68,7 +68,7 @@ By clicking on `💾 Save` the wagon will be added, and you will be redirected t
 * Using the _My Analyses_ page, click on the button `🧬` to clone a wagon.
 
 <div align="center">
-<img src="../images/cloneWagon.png" width="70%">
+<img src="../images/cloneWagon.png" width="70%" alt="Screenshot of clone wagon">
 </div>
 
 A list of _Analyses_ you belong to will be displayed. You have to select the _Analysis_ where you want to clone the _Wagon_ to, and name the _NewWagon_ (the wagon name has to be unique within _Analysis_). By clicking on `🧬 Clone`, a new wagon will be added with the same configuration as the _Wagon_ including subwagons and derived data.
@@ -83,24 +83,24 @@ You can get to the _All Analyses_ page by using the main menu, or by the link in
 * <a name="view-wagon">By clicking on the top-left corner, you will be redirected to a read-only view of the wagon, that can be shared with colleagues and support. The top right corner history symbol leads to the [_Wagon **History**_](#wagonhistory) page, which will display the state evolution of the wagon.
 
 <div align="center">
-<img src="../images/wagonShortcuts.png" width="80%">
+<img src="../images/wagonShortcuts.png" width="80%" alt="Screenshot of wagon shortcuts">
 </div>
- 
+
 ## <a name="wagon-settings"></a> Wagon Settings
 
 * <a name="wagonsettings"></a>In _Wagon settings_ you can modify the wagon name, work flow name, and select wagon's dependencies. The dependencies offered are wagons from the same _Analysis_ or from [_Service wagons_](#servicewagons).
 
 <div align="center">
-<img src="../images/wagonSettings.png" width="70%">
+<img src="../images/wagonSettings.png" width="70%" alt="Screenshot of wagon settings">
 </div>
- 
+
 ## <a name="wagon-configuration"></a> Wagon Configuration
 
 * <a name="wagonconfiguration"></a>In _Configuration_ the wagon configuration corresponding to the workflow will be available in the _Base_. The configuration is divided per _Task_, hence if you need to add a new parameter, you will need add it in the following order: task, parameter and value.
 * The wagon configuration supports a variety of parameter types defined in task as _Configurable_ including: primitive type parameters, fixed-length arrays, variable-length arrays, matrices, labelled matrices and histogram binning.
 
 <div align="center">
-<img src="../images/detailedConf.png" width="70%">
+<img src="../images/detailedConf.png" width="70%" alt="Screenshot of detailed configuration">
 </div>
 
 * The _Variable-length arrays_ allow the user to add/remove elements in the _Base_ wagon, and the change will be propagated in all the subwagons.
@@ -115,62 +115,60 @@ You can get to the _All Analyses_ page by using the main menu, or by the link in
 * The subwagons added to the wagon will be represented with an automatically assigned suffix in _AnalysisResults.root_. Here you can see an example where we have added two subwagons called _smalleta_ and _verysmalleta_.
 
 <div align="center">
-<img src="../images/subwagonSuffix1.png" width="80%">
+<img src="../images/subwagonSuffix1.png" width="80%" alt="Screenshot of subwagon suffix">
 </div>
 
 * In order to update the base and subwagon configuration with the latest version of the workflow, click on the button `↻ sync` in _Configuration_. By synchronizing the configuration, the parameters which no longer belong to the workflow will be removed, and the values of the wagon's _Base_ will be updated as well if they have not been modified by the user.
 
 ### <a name="upload-wagon-json"></a> Upload Wagon Configuration via JSON
 
-* <a name="uploadwagonjson"></a> The wagon configuration may be adjusted via JSON file. Any values in the wagon will be adjusted to the values in the JSON file. 
+* <a name="uploadwagonjson"></a> The wagon configuration may be adjusted via JSON file. Any values in the wagon will be adjusted to the values in the JSON file.
 
 <div align="center">
-<img src="../images/updateViaJSONButton.png" width="30%">
+<img src="../images/updateViaJSONButton.png" width="30%" alt="Screenshot of update via json button">
 </div>
 
 * The required format for Hyperloop to ingest the JSON is the exact format given when downloading the configuration JSON file from Hyperloop (from the download button above). This download includes workflows from dependencies. When uploading, it is not necessary to remove dependencies - any workflows not directly from the wagon will be ignored during the upload.
 
 <div align="center">
-<img src="../images/updateViaJSONPageOne.png" width="50%">
+<img src="../images/updateViaJSONPageOne.png" width="50%" alt="Screenshot of update via json page one">
 </div>
 
 * Only configurables and subwagons which already exist in the wagon may be edited - any new subwagons or configurables in the JSON will be ignored. To add new subwagons, first add them to the existing wagon. When a file is chosen, each changed value is shown in the 'overview'. All values in 'base' are listed first, with subwagons listed below. In the example below, there are two subwagons, 'Pos' and 'Neg'. Hovering over any value will display the change in a tooltip.
 
 <div align="center">
-<img src="../images/updateViaJSONOverview.png" width="40%">
+<img src="../images/updateViaJSONOverview.png" width="40%" alt="Screenshot of update via json overview">
 </div>
 
-* There is validation to check for invalid values. It also ensures that there are no identical subwagons. 
+* There is validation to check for invalid values. It also ensures that there are no identical subwagons.
 
 <div align="center">
-<img src="../images/updateViaJSONValidation.png" width="40%">
+<img src="../images/updateViaJSONValidation.png" width="40%" alt="Screenshot of update via json validation">
 </div>
 
 * A full diff between the current and uploaded configuration is also available. Every difference between the current and uploaded configuration is shown.
 
 <div align="center">
-<img src="../images/updateViaJSONDiff.png" width="40%">
+<img src="../images/updateViaJSONDiff.png" width="40%" alt="Screenshot of update via json diff">
 </div>
 
 * Once 'Apply Changes' is pressed, any altered values will be highlighted in yellow. No changes are saved until the 'save' button is pressed, so it is possible to apply the changes to view them without losing the current configuration.
 
 <div align="center">
-<img src="../images/updateViaJSONHighlight.png" width="70%">
+<img src="../images/updateViaJSONHighlight.png" width="70%" alt="Screenshot of update via json highlight">
 </div>
 
+## <a name="wagon-derived-data"></a> Derived data
 
+* <a name="wagonderived"></a>In _Derived Data_ the tables which are produced by the task are displayed. If activated, these are saved to the output if the train is run as a derived data production. The produced derived data can be made available by the operators and serve as input for subsequent trains.
 
-
-## <a name="wagon-derived-data"></a> Derived data 
-
-* <a name="wagonderived"></a>In _Derived Data_ the tables which are produced by the task are displayed. If activated, these are saved to the output if the train is run as a derived data production. The produced derived data can be made available by the operators and serve as input for subsequent trains. 
- 
 ### <a name="deriveddatatypes"></a> Derived data types
+
 * There are three types of derived data specifications:
   * Standard derived data (marked with 🗂️)- if the wagon is used in a train, this will produce derived data to be used for further analysis. The results will not be merged across runs and can be used as input for future train runs. Note that standard derived data trains do not submit automatically and may need additional approval. If in doubt, please seek advise before enabling derived data tables in your wagon configuration.
   * Slim derived data (marked with green bordered 🗂️) - similarly to the standard derived data case, if used in a train, this will produce derived data to be used for further analysis. This is reserved for derived data of small output size. The results will be merged across runs and are not available to use in future train runs. The data will be automatically deleted after a preset period of time. You can mark a wagon for running as slim derived data by checking `Ready for slim derived data`.
   * Linked derived data (marked with red bordered 🗂️) - linked derived data trains will also produce derived data to be used for further analysis. Linked derived data has access to the parent AO2D - this is not the case for other derived data types. Like standard derived data, results are not merged across runs.
- 
+
 * For wagons set as ready for slim derived data, two more fields need to be correctly set:
   * Max DF size - This sets the maximal dataframe size in the merging step. Has to be 0 for not-self contained derived data (which need parent file access).
   * Max derived file size - Sets the size limit for the output file size of the derived data file. This is an expert parameter which usually does not have to be changed. Only change this value if the processing in subsequent trains takes so long that the jobs fail. If set to 0 a good value will be automatically determined.
@@ -182,33 +180,33 @@ When enabling `Ready for slim derived data` the option has to be selected for th
 * In order to update the derived data configuration with the latest version of the workflow, click on the button `↻ sync` in _Derived data_. By synchronizing the derived data, the tables which no longer belong to the workflow will be removed, and the values of the tables will be updated.
 
 <div align="center">
-<img src="../images/derivedDataEx.png" width="70%">
+<img src="../images/derivedDataEx.png" width="70%" alt="Screenshot of derived data example">
 </div>
 
-## <a name="wagon-test-statistics"></a> Test Statistics 
+## <a name="wagon-test-statistics"></a> Test Statistics
 
 * <a name="wagonteststatistics"></a>_Test Statistics_ contains three graphs that display different metrics following the tests this wagon was part of. The first graph plots the _PSS Memory_ corresponding to each test run. The second one diplays the _CPU Time_, _Wall time_ and _Throughput_ along the test runs for this wagon. Finally, the third graph shows the _Output size_ at each test run.
 
 <div align="center">
-<img src="../images/testStatistics.png" width="70%">
+<img src="../images/testStatistics.png" width="70%" alt="Screenshot of test statistics">
 </div>
 
 * Depending on the datasets this wagon is using, the user is able to choose the _Dataset_ on which the metrics mentioned above are plotted, from the upper-left dropdown. In case no tests were run on the chosen dataset, a message will appear stating this.
 
 <div align="center">
-<img src="../images/datasetDropdown.png" width="60%">
+<img src="../images/datasetDropdown.png" width="60%" alt="Screenshot of dataset dropdown">
 </div>
 
 * By clicking on the bullets representing the metric value at any of the test runs plotted, the user will open a new tab displaying a read-only view of the wagon test output.
 
 <div align="center">
-<img src="../images/testStatsGraphs.png" width="70%">
+<img src="../images/testStatsGraphs.png" width="70%" alt="Screenshot of test stats graphs">
 </div>
 
 * In order to zoom into the graph, the user needs to click and drag over the are of interest, which will automatically show the zoomed-in graph portion. By double-clicking, it will zoom out and show the entire graph.
 
 <div align="center">
-<img src="../images/zooming.png" width="90%">
+<img src="../images/zooming.png" width="90%" alt="Screenshot of zooming">
 </div>
 
 ### <a name="wagonhistory"></a> 4. Wagon History
@@ -216,7 +214,7 @@ When enabling `Ready for slim derived data` the option has to be selected for th
 * In the _Wagon History_ page, there is a summary of the wagon's state from the creation until the last update. By clicking on the _+_ symbol, one can expand the information, showing the subwagons' details and the derived data at each timestamp.
 
 <div align="center">
-<img src="../images/WagonHistory.png" width="70%">
+<img src="../images/WagonHistory.png" width="70%" alt="Screenshot of wagon history">
 </div>
 
 * On the right side of the page, the user can select two timestamps in order to compare the state of the wagon between the two by clicking _Compare_. This will lead to [_Compare Wagons_](#compare-wagons) page. You can cancel your current selection by clicking _Unselect all_.
@@ -228,7 +226,7 @@ When enabling `Ready for slim derived data` the option has to be selected for th
 * The Derived data tab reflects the differences concerning the derived data at the two timestamps.
 
 <div align="center">
-<img src="../images/compareWagons.png" width="70%">
+<img src="../images/compareWagons.png" width="70%" alt="Screenshot of compare wagons">
 </div>
 
 ### <a name="compare-arb-wagons"></a>6. Compare individual wagons
@@ -237,7 +235,7 @@ When enabling `Ready for slim derived data` the option has to be selected for th
 * Using the _My Analyses_ page, click on the button `🆚` to compare the wagon. A list of all your wagons will be displayed. Once you select the desired wagon, this will open the comparison view in a new tab. This has a similar structure to the different timstamps comparison.
 
 <div align="center">
-<img src="../images/compareUserWagons.png" width="70%">
+<img src="../images/compareUserWagons.png" width="70%" alt="Screenshot of compare user wagons">
 </div>
 
 ## <a name="joinanalysis"></a> Creating or joining an analysis
@@ -256,7 +254,7 @@ The rest of the parameters are not relevant for the Hyperloop train system.
 
 After all the parameters have been set, click on `Create` and your _Analysis_ will be available in the _My Analyses_ and _All Analyses_ page.
 
-<img src="../images/comparisonwithjira.png" width="100%">
+<img src="../images/comparisonwithjira.png" width="100%" alt="Screenshot of comparison with jira">
 
 The synchronization from JIRA to the Hyperloop train system can take up to 30 minutes.
 
@@ -267,7 +265,7 @@ The synchronization from JIRA to the Hyperloop train system can take up to 30 mi
 * Inside of an analysis, click on the button `Datasets and Settings 📝`.
 
 <div align="center">
-<img src="../images/datasetandsettings.png" width="50%">
+<img src="../images/datasetandsettings.png" width="50%" alt="Screenshot of dataset and settings">
 </div>
 
 * There is a list of _Enabled datasets in **Analysis**_. You can disable a dataset for that analysis by clicking on the button `❌`.
@@ -279,7 +277,7 @@ The synchronization from JIRA to the Hyperloop train system can take up to 30 mi
 * You can browse and click on the _Dataset_ you want to add to your analysis.
 
 <div align="center">
-<img src="../images/enableDatasetDatasetsPage.png" width="80%">
+<img src="../images/enableDatasetDatasetsPage.png" width="80%" alt="Screenshot of enable dataset datasets page">
 </div>
 
 * <a name="view-dataset"></a>Inside of the _Dataset_ view page, click on the button `✚ Add dataset to analysis`. It will display a list of all the analyses you belong to. Select the _Analysis_ you want to add the dataset to, and click on `💾 Save`.
@@ -293,7 +291,7 @@ You can enable a wagon in the _My Analyses_ page. Inside of the _Analysis_ there
   3. Pull request: Select the option `☑️ Future tag based on pull request`. There will be a list of the latest merged/unmerger pull requests available with their corresponding description. By choosing a pull request, your wagon will be tested as soon as the pull request is merged in a package tag. Then your wagon will be composed in a train with the latest package tag available.
 
  <div align="center">
-<img src="../images/enablewagon.png" width="70%">
+<img src="../images/enablewagon.png" width="70%" alt="Screenshot of enable wagon">
 </div>
 
   After choosing the package tag to be used, click on the button `❌` to enable your wagon in a dataset, the icon will change from `❌` to `✅`. If you hover over `✅` you can see the information about the enabled wagon: package tag, time and username. If you need to disable a wagon in a dataset, click on the button `✅`. After enabled, the wagon will be automatically tested and you can follow the progress of the [test](#wagon-test) on the button next to `✅`: `⌛️` queued,`⏳` ongoing,`🌟` done, `❗️` warning and `💣` failed.
@@ -310,7 +308,7 @@ You can enable a wagon in the _My Analyses_ page. Inside of the _Analysis_ there
 * If a wagon test has failed, one can study the failure source by clicking the test output button. This will open in a new tab the list of files that can be used to track the possible issues that led to the failure.
 
 <div align="center">
-   <img src="../images/debugFailedTest.png" width="70%">
+   <img src="../images/debugFailedTest.png" width="70%" alt="Screenshot of debug failed test">
 </div>
 
 * You can analyse:
@@ -324,17 +322,17 @@ You can enable a wagon in the _My Analyses_ page. Inside of the _Analysis_ there
 * <a name="testresults"></a>The Test results tab shows the performance metrics per device (reader, workflows, writer), along with the expected resources. You can use the interactive graphs (per device) to zoom into the area of interest (click and drag) or zoom out (double-click).
 
 <div align="center">
-   <img src="../images/wagonTestResults.png" width="70%">
+   <img src="../images/wagonTestResults.png" width="70%" alt="Screenshot of wagon test results">
 </div>
 
 * <a name="testgraphs"></a>The Test Graphs tab, plots the available metrics for the specific wagon test. You can choose the metric of interest from the dropdown, zoom into the graph (click and drag) and zoom out (double-click).
 
 <div align="center">
-   <img src="../images/testGraphs.png" width="70%"> //already there
+   <img src="../images/testGraphs.png" width="70%" alt="Screenshot of test graphs"> //already there
 </div>
 
 * If you only want to see the top 10 graph with the highest average, check the Show top 10 largest box.
- 
+
 * To produce this type of performance graphs for a local O2 execution, follow the instructions [here](#producing-performance-graphs-for-a-local-o2-execution).
 
 * Whenever a wagon configuration is changed, if there are enabled wagons (including wagons that depend on it), then the test is automatically reset and a new test is launched. However, if the enabled wagon was already composed in a train, the train will run with the wagons and dataset configuration of the time at which the train was created.
@@ -345,101 +343,98 @@ When creating or enabling wagons, you can use a pull request instead of a packag
 
 1. [Adding a new wagon](#addwagon): You can create a wagon with your unmerged or unreleased workflow. If the workflow is not available, add manually the configuration of the wagon, and subwagons if needed. You can synchronize the wagon's configuration once the package tag that includes your pull request has been released.
 2. [Enabling a wagon in a dataset](#enabling-a-wagon): If you need to enable your wagon with workflow that is unmerged or unreleased, use a `Future tag based on pull request`. There is a list of the latest merged and unmerged pull requests available in the system, you can see the pull request number and description. Select the _pull request tag_ and enable the wagon in a dataset. By doing this, the wagon will be queued to test, and the test will begin once the _pull request_ has been merged to a package tag, and the package tag is released. And then, if the test is successful, it'll be composed in a train with the latest package tag available.
- 
-## <a name="warnings"></a> Warnings
- 
-When a wagon test finishes in warning, this means that the wagon will not be included in the automatic composition schedule. Therefore, train composition can be requested in the Operation channel, where an operator will take care of the request. Before doing so, please review if you cannot fix the cause of the warning yourself. Depending on the nature of the warning and the degree of exceeding specific constraints, the operator will either compose your train or advise you to review and improve certain parts before requesting a train again. In the latter case, the user can analyze the test and review the logs, searching for ways of improving resource usage or other elements that caused the exceptions.
- 
- There are a number of warnings, which will require different courses of action:
- 
-### 1. <a name="warning-memory"></a> Memory consumption too large for automatic train submission
- 
- <div align="center">
-    <img src="../images/warnignMemory.png" width="40%">
- </div>
- 
- * The memory consumption is larger than the limit. In wagon tests, the limit is the memory allowance of a two core target minus a small buffer, which is ~ 3.6GB. 
- * In the train test, the limit is the memory allowance of the train target. For Grid - Single core and 2 core, trains may be submitted even with the warning: If the average PSS memory is <=  3.2 GB, then operators will compose your train on Grid - Single core. Otherwise, if it is > 3.2 GB and <= 4 GB, the operators will compose the train on request on Grid - 2 core. If larger than 4 GB, then the train cannot be composed. The user should check for ways of improving memory consumption.
 
- * For the other target queues, trains can only be composed if the memory consumption is within the target limits.
- * For the cases when the train cannot be composed due to high memory consumption, the user can review the test. One can check the logs and look for any possible improvements that can be done for a lower memory consumption.
- 
+## <a name="warnings"></a> Warnings
+
+When a wagon test finishes in warning, this means that the wagon will not be included in the automatic composition schedule. Therefore, train composition can be requested in the Operation channel, where an operator will take care of the request. Before doing so, please review if you cannot fix the cause of the warning yourself. Depending on the nature of the warning and the degree of exceeding specific constraints, the operator will either compose your train or advise you to review and improve certain parts before requesting a train again. In the latter case, the user can analyze the test and review the logs, searching for ways of improving resource usage or other elements that caused the exceptions.
+
+ There are a number of warnings, which will require different courses of action:
+
+### 1. <a name="warning-memory"></a> Memory consumption too large for automatic train submission
+
+ <div align="center">
+    <img src="../images/warnignMemory.png" width="40%" alt="Screenshot of warning for memory">
+ </div>
+
+* The memory consumption is larger than the limit. In wagon tests, the limit is the memory allowance of a two core target minus a small buffer, which is ~ 3.6GB.
+* In the train test, the limit is the memory allowance of the train target. For Grid - Single core and 2 core, trains may be submitted even with the warning: If the average PSS memory is <=  3.2 GB, then operators will compose your train on Grid - Single core. Otherwise, if it is > 3.2 GB and <= 4 GB, the operators will compose the train on request on Grid - 2 core. If larger than 4 GB, then the train cannot be composed. The user should check for ways of improving memory consumption.
+
+* For the other target queues, trains can only be composed if the memory consumption is within the target limits.
+* For the cases when the train cannot be composed due to high memory consumption, the user can review the test. One can check the logs and look for any possible improvements that can be done for a lower memory consumption.
+
 ### 2. <a name="warning-pss"></a> Maximal PSS more than 30% larger than average PSS
- 
+
   <div align="center">
-    <img src="../images/warningPSS.png" width="40%">
+    <img src="../images/warningPSS.png" width="40%" alt="Screenshot of warning pss">
   </div>
- 
- * The maximum PSS memory consumption is more than 30% larger than the average PSS, therefore the train cannot be automatically composed. This warning means that a memory leak is possible, so it must be checked by an operator. If there is no memory leak, the train can be composed. Otherwise, the operator will advise the user to check for possible causes and improvements before requesting again.
+
+* The maximum PSS memory consumption is more than 30% larger than the average PSS, therefore the train cannot be automatically composed. This warning means that a memory leak is possible, so it must be checked by an operator. If there is no memory leak, the train can be composed. Otherwise, the operator will advise the user to check for possible causes and improvements before requesting again.
 
 ### 3. <a name="warning-cpu"></a> CPU usage too large
- 
+
   <div align="center">
-    <img src="../images/warningCPU.png" width="40%">
+    <img src="../images/warningCPU.png" width="40%" alt="Screenshot of warning cpu">
   </div>
- 
- * The CPU usage limit is set per dataset and all trains running on a specific dataset must respect this constraint. If the limit is not respected, the train cannot be composed without PWG approval. Therefore, the user should discuss the details and requirements for this train with the PWG before requesting again. Depending on the amount of total resources, an approval in the Physics Board (PB) may also be needed. The CPU limit of a dataset may be viewed on the dataset page.
- * It is possible for a train to have a CPU warning when composed despite the wagon test not having a CPU warning. This usually happens in a situation where the wagon test (which runs on a single core) uses so much memory that it doesn't fit a single core job on the grid and therefore needs two cores for the train (more cores means a higher memory allowance). But if the devices in the wagon cannot be parallelised well over multiple cores, this leads to more wall time and a higher CPU usage as the cores will be underutilised. In this situation, one can either reduce the wagon memory consumption to fit into a single core or reduce the CPU consumption to fit the dataset. 
- 
+
+* The CPU usage limit is set per dataset and all trains running on a specific dataset must respect this constraint. If the limit is not respected, the train cannot be composed without PWG approval. Therefore, the user should discuss the details and requirements for this train with the PWG before requesting again. Depending on the amount of total resources, an approval in the Physics Board (PB) may also be needed. The CPU limit of a dataset may be viewed on the dataset page.
+* It is possible for a train to have a CPU warning when composed despite the wagon test not having a CPU warning. This usually happens in a situation where the wagon test (which runs on a single core) uses so much memory that it doesn't fit a single core job on the grid and therefore needs two cores for the train (more cores means a higher memory allowance). But if the devices in the wagon cannot be parallelised well over multiple cores, this leads to more wall time and a higher CPU usage as the cores will be underutilised. In this situation, one can either reduce the wagon memory consumption to fit into a single core or reduce the CPU consumption to fit the dataset.
+
 ### 4. <a name="warning-ccdb"></a> Too many CCDB calls
- 
+
   <div align="center">
-    <img src="../images/warningCCDB.png" width="40%">
+    <img src="../images/warningCCDB.png" width="40%" alt="Screenshot of warning ccdb">
   </div>
- 
- * Too many calls to the CCDB, therefore the train cannot be composed, and the cause of a high number of calls should be checked.
+
+* Too many calls to the CCDB, therefore the train cannot be composed, and the cause of a high number of calls should be checked.
 
 ### 5. <a name="warning-reduction-factor"></a> Reduction factor too small
- 
+
   <div align="center">
-    <img src="../images/warningReductionFactor.png" width="40%">
+    <img src="../images/warningReductionFactor.png" width="40%" alt="Screenshot of warning reduction factor">
   </div>
- 
- * This occurs when the reduction factor is lower than 50. If the expected output size is below 50 GB, the operator can compose the train on request. If larger, the train cannot be composed.
- 
+
+* This occurs when the reduction factor is lower than 50. If the expected output size is below 50 GB, the operator can compose the train on request. If larger, the train cannot be composed.
+
 ### 6. <a name="warning-log-file"></a> Log output too large
- 
+
   <div align="center">
-    <img src="../images/warningLogOutput.png" width="40%">
+    <img src="../images/warningLogOutput.png" width="40%" alt="Screenshot of warning log output">
   </div>
- 
- * The log file is too large, therefore the train cannot be composed, and the user should check for factors leading to this.
- 
+
+* The log file is too large, therefore the train cannot be composed, and the user should check for factors leading to this.
+
 ### 7. <a name="warning-derived-output"></a> Derived output too large for slim train
- 
+
   <div align="center">
-    <img src="../images/warningDerivedOutput.png" width="40%">
+    <img src="../images/warningDerivedOutput.png" width="40%" alt="Screenshot of warning derived output">
   </div>
- 
- * This is specific to tests with wagons set as ready for slim derived data. As the entire output is merged into one single file, there is a limit of 4000 MB for this. If exceeded, the user is advised to switch to standard derived data by unchecking the option “Ready for slim derived data” in the wagon edit view. Then a request for standard derived data train can be made.
+
+* This is specific to tests with wagons set as ready for slim derived data. As the entire output is merged into one single file, there is a limit of 4000 MB for this. If exceeded, the user is advised to switch to standard derived data by unchecking the option “Ready for slim derived data” in the wagon edit view. Then a request for standard derived data train can be made.
 
 ### 8. <a name="warning-unbound-indices"></a>Unbound indices detected in AO2D merging
- 
-  <div align="center">
-    <img src="../images/warningUnboundIndices.png" width="40%">
-  </div>
- 
- * For derived data trains, it notifies the detection of unbound columns during AO2D merging. This means that one of the output tables which has been asked to be stored has index columns to tables which are not within the output. This usually points to a bad or broken data model definition and should be fixed. The only case where this is expected and not worrisome is linked derived data. For both slim derived data and standard derived data, the data model should be fixed.
 
+  <div align="center">
+    <img src="../images/warningUnboundIndices.png" width="40%" alt="Screenshot of warning unbound indices">
+  </div>
+
+* For derived data trains, it notifies the detection of unbound columns during AO2D merging. This means that one of the output tables which has been asked to be stored has index columns to tables which are not within the output. This usually points to a bad or broken data model definition and should be fixed. The only case where this is expected and not worrisome is linked derived data. For both slim derived data and standard derived data, the data model should be fixed.
 
 ### 9. <a name="warning-25-input-files"></a>Too many input files expected to go to derived output
- 
+
   <div align="center">
-    <img src="../images/linkedFilesDerivedOutput.png" width="37%">
+    <img src="../images/linkedFilesDerivedOutput.png" width="37%" alt="Screenshot of linked files derived output">
   </div>
- 
- * This warning only appears for linked derived data. The maximum number of input files which can go to derived output is 25. The warning will display how many are expected. If this warning appears, the train cannot be submitted.
+
+* This warning only appears for linked derived data. The maximum number of input files which can go to derived output is 25. The warning will display how many are expected. If this warning appears, the train cannot be submitted.
 
 ### <a name="multiple-warnings"></a>Multiple warnings
- 
+
 It is possible that a wagon test or train test will produce multiple warnings. In that case, the checks above will be done for each warning present, and the decision making regarding train submission will be done considering all the exceptions.
- 
-  
+
   <div align="center">
-    <img src="../images/multipleWarnings.png" width="40%">
+    <img src="../images/multipleWarnings.png" width="40%" alt="Screenshot of multiple warnings">
   </div>
- 
- 
+
 ## <a name="all-analyses"></a>All Analyses
 
 * [**All Analyses**](https://alimonitor.cern.ch/hyperloop/all-analyses) is a read only view of all analyses available in the system. <a name="view-analysis">Click on the analysis name to be redirected to a read-only view of the analysis.
@@ -452,13 +447,13 @@ It is possible that a wagon test or train test will produce multiple warnings. I
 * <a name="train-comparison"></a>To compare two trains, select them in the Compare column and click Compare. This will open a new tab displaying the differences between the two trains.
 
  <div align="center">
-    <img src="../images/compareTrains.png" width="70%">
+    <img src="../images/compareTrains.png" width="70%" alt="Screenshot of compare trains">
  </div>
 
 * The train run result can be accessed by clicking on the TRAIN_ID, or with the url <https://alimonitor.cern.ch/hyperloop/train-run/TRAIN_ID>.
 
 <div align="center">
-   <img src="../images/trainRunsPage.png" width="70%">
+   <img src="../images/trainRunsPage.png" width="70%" alt="Screenshot of train runs page">
 </div>
 
 ## <a name="train-run"></a>Train Run Result
@@ -466,62 +461,62 @@ It is possible that a wagon test or train test will produce multiple warnings. I
 * The _General_ tab displays the summary of the train's progress, direct links to dataset and participating wagon configuration, as well as direct links to the test output and the [speedscope](https://johnysswlab.com/speedscope-visualize-what-your-program-is-doing-and-where-it-is-spending-time/) profiling of the task.
 
 <div align="center">
-   <img src="../images/trainResult.png" width="70%">
+   <img src="../images/trainResult.png" width="70%" alt="Screenshot of train result">
 </div>
 
 * <a name="traintestresults"></a>The _Test results_ tab shows the performance metrics per device (reader, workflows, writer), along with the expected resources. You can use the interactive graphs (per device) to zoom into the area of interest (click and drag) or zoom out (double-click).
 
 <div align="center">
-   <img src="../images/testResults.png" width="70%">
+   <img src="../images/testResults.png" width="70%" alt="Screenshot of test results">
 </div>
 
 * <a name="traintestgraphs"></a>In the _Test Graphs_ tab, the user can plot the available metrics for the specific _Train run_. By hovering over the graph, the corresponding values are displayed in a dynamic window, stating the value for each participating wagon.
 
   <div align="center">
-    <img src="../images/testGraphs.png" width="70%">
+    <img src="../images/testGraphs.png" width="70%" alt="Screenshot of test graphs">
   </div>
 
   * The metric can be selected from the upper-left dropdown, and the graph will change accordingly.
   * The user can choose to plot the metric data per device, by checking the _Per Device_ near the dropdown.
 
   <div align="center">
-    <img src="../images/testGraphsPerDevice.png" width="70%">
+    <img src="../images/testGraphsPerDevice.png" width="70%" alt="Screenshot of test graphs per device">
   </div>
 
   * In order to plot the highest ten graphs, that means the graphs with the highest average, the user can click the **Show top 10 largest** checkbox.
 
   <div align="center">
-    <img src="../images/graphLargest.png" width="70%">
+    <img src="../images/graphLargest.png" width="70%" alt="Screenshot of graph largest">
   </div>
 
   * The user can zoom into the graph by clicking and dragging the mouse along the area of interest. For zooming out, the user must double-click on the graph.
 
   <div align="center">
-    <img src="../images/graphZoom.png" width="70%">
+    <img src="../images/graphZoom.png" width="70%" alt="Screenshot of graph zoom">
   </div>
 
    <div align="center">
-    <img src="../images/graphZoom2.png" width="70%">
+    <img src="../images/graphZoom2.png" width="70%" alt="Screenshot of graph zoom 2">
   </div>
- 
+
 * To produce this type of performance graphs for a local O2 execution, follow the instructions [here](#producing-performance-graphs-for-a-local-o2-execution).
 
 * <a name="trainsubmittedjobs"></a>In _Submitted jobs_, you can see the summary of the master jobs, along with links to the **IO Statistics** and **Stack trace**.
 
 <div align="center">
-   <img src="../images/submittedJobs1.png" width="70%">
+   <img src="../images/submittedJobs1.png" width="70%" alt="Screenshot of submitted jobs 1">
 </div>
 
 * Click the **IO Statistics** button to be redirected to the site activity information.
 
 <div align="center">
-   <img src="../images/submittedJobs2.png" width="70%">
+   <img src="../images/submittedJobs2.png" width="70%" alt="Screenshot of submitted jobs 2">
 </div>
 
 * Click the **Stack trace** button to be redirected to the stack trace information in MonALISA. Here you can see a summary of failures of your jobs.
 
 <div align="center">
-   <img src="../images/submittedJobs3.png" width="90%">
+   <img src="../images/submittedJobs3.png" width="90%" alt="Screenshot of submitted jobs 3">
 </div>
 
 * This information is collected when the masterjobs have finished from all ERROR_V jobs. Some information is already available while the train is running but make sure to check again when the train is in a final state. Common errors are grouped and counted. This allows you to investigate failures and debug them using the provided stack trace.
@@ -529,41 +524,41 @@ It is possible that a wagon test or train test will produce multiple warnings. I
 * <a name="traingridstats"></a>The _Grid statistics_ tab presents a summary of the jobs performance and plots the Files/Job, CPU time/Job and Wall time/Job statitics.
 
 <div align="center">
-   <img src="../images/gridStats.png" width="70%">
+   <img src="../images/gridStats.png" width="70%" alt="Screenshot of grid stats">
 </div>
 
 * <a name="trainderived"></a>If the train is run as a derived data production and there are activated tables, the Derived data tab will be showed. This displays the tables which are produced by the task and saved to the output.
 
 <div align="center">
-   <img src="../images/trainModalDerived.png" width="70%">
+   <img src="../images/trainModalDerived.png" width="70%" alt="Screenshot of train modal derived">
 </div>
 
-* <a name="trainmergedoutput"></a>_Merged output_ displays the merging jobs and the output directories. A merged output is created for every mergelist and final mergelist in the dataset, along with the full train merge. The mergelists and final mergelists are defined in the dataset settings. Mergelists contain lists of runs from a single runlist, while final mergelists are used to combine mergelists across productions. 
+* <a name="trainmergedoutput"></a>_Merged output_ displays the merging jobs and the output directories. A merged output is created for every mergelist and final mergelist in the dataset, along with the full train merge. The mergelists and final mergelists are defined in the dataset settings. Mergelists contain lists of runs from a single runlist, while final mergelists are used to combine mergelists across productions.
 
 <div align="center">
-   <img src="../images/mergedOutput.png" width="80%">
+   <img src="../images/mergedOutput.png" width="80%" alt="Screenshot of merged output">
 </div>
 
 * When the final merge is started manually by the operator, some of the runs may not be merged. You can copy the list of merged runs or the total list of runs by clicking on the (red) number.
 * Here you can also track the submission process, and debug issues that may have taken place.
 
 <div align="center">
-   <img src="../images/mergedOutput1.png" width="90%">
+   <img src="../images/mergedOutput1.png" width="90%" alt="Screenshot of merged output 1">
 </div>
-
 
 ### <a name="request-long-train"></a> Request Long Train
 
 * <a name="longTrain"></a>The _Request long train_ tab allows users to request a long train after the train ran on a short dataset. Short datasets are subsets of a big dataset (_set up in the Dataset settings_). First, a train run needs to be **Done on a smaller short dataset** before being run on a bigger dataset.
 * Any user who is part of the analysis can request a long train. Approval from the participating analyses PWGs conveners is required in order to submit a long train.
+
 <div align="center">
-   <img src="../images/longTrainDerivedType.png" width="70%">
+   <img src="../images/longTrainDerivedType.png" width="70%" alt="Screenshot of long train derived type">
 </div>
 
 * When requesting a long train, it is possible to request standard derived data from a short train with slim derived data by changing the derived data setting as shown above.
 
 <div align="center">
-   <img src="../images/requestLongTrain.png" width="70%">
+   <img src="../images/requestLongTrain.png" width="70%" alt="Screenshot of request long train">
 </div>
 
 * Once the long train is approved:
@@ -571,57 +566,61 @@ It is possible that a wagon test or train test will produce multiple warnings. I
   * Otherwise the Submit button is enabled and the operator can submit the train
 
    <div align="center">
-    <img src="../images/longTrainApproved.png" width="80%">
+    <img src="../images/longTrainApproved.png" width="80%" alt="Screenshot of long train approved">
    </div>
- 
+
 ## <a name="localO2execution"></a>Producing performance graphs for a local O2 execution
- 
+
  **Performance Graphs** page allows the user to upload his own local metrics file, and then generate the test graphs specific to that file. You produce a local _performanceMetrics.json_ by running the o2 workflow with the argument _--resources-monitoring 2_ which, in this example, produces monitoring information every 2 seconds. These are the same type of graphs produced in the _Test Graphs_ tab of the train run. This page can be accessed at: <https://alimonitor.cern.ch/hyperloop/performance-graphs>.
 
 <div align="center">
-<img src="../images/performanceGraphs.png" width="100%">
+<img src="../images/performanceGraphs.png" width="100%" alt="Screenshot of performance graphs">
 </div>
 
 ## <a name="local-train"></a>Reproducing a train run on a local machine
+
  A train test or a Grid train run can be redone on a local machine. This is useful to understand a problem better or to just reproduce some settings of a previous train.
  In order to do so, you need two general prerequisites:
-   * Download the `run_train.sh` script from [here](https://alimonitor.cern.ch/train-workdir/run_train.sh). Say this is placed in a folder `/my/path/`.
-   * Make sure `jq` is installed on your system. Type `jq` on the command prompt. If you get an error that the command was not found, you have to install it. This package is a system package on most systems (it has nothing to do with ALICE). Use Google if you need instructions for your specific operation system.
-   * Now the following command should work and give reasonable output:
+
+* Download the `run_train.sh` script from [here](https://alimonitor.cern.ch/train-workdir/run_train.sh). Say this is placed in a folder `/my/path/`.
+* Make sure `jq` is installed on your system. Type `jq` on the command prompt. If you get an error that the command was not found, you have to install it. This package is a system package on most systems (it has nothing to do with ALICE). Use Google if you need instructions for your specific operation system.
+* Now the following command should work and give reasonable output:
+
  ```bash
  /my/path/run_train.sh --help
 ```
+
  To now run a specific train test or Grid run, you need to create a folder and put there two files:
-   * Download the `full_config.json` from the train test or Grid run
-   * Create a file `input_data.txt` in which you put the file paths of the data you want to process. You can either put the paths to files on AliEn or download the data locally and point to the local paths. Each line should contain one file. In order to take the same data as from a train test, you can check at the top of the `stdout.log` of a train test where you have the AliEn paths and also paths to download the files to your local machine. You then run:
+
+* Download the `full_config.json` from the train test or Grid run
+* Create a file `input_data.txt` in which you put the file paths of the data you want to process. You can either put the paths to files on AliEn or download the data locally and point to the local paths. Each line should contain one file. In order to take the same data as from a train test, you can check at the top of the `stdout.log` of a train test where you have the AliEn paths and also paths to download the files to your local machine. You then run:
+
  ```bash
  /my/path/run_train.sh --skip-perf
  ```
 
-
 ## <a name="train-slots-per-week"></a>Train slots per week
 
-For a given analysis, every dataset has a train slots per week limit. This limit is shown in the dataset under 'Maximal train slots per analysis per week'. If an analyzer uses the same dataset across multiple analyses, the calculation (for the analyzer only) is the summed slots across analyses. 
+For a given analysis, every dataset has a train slots per week limit. This limit is shown in the dataset under 'Maximal train slots per analysis per week'. If an analyzer uses the same dataset across multiple analyses, the calculation (for the analyzer only) is the summed slots across analyses.
 
 These limits ensure fair usage of resources, and are calculated on a rolling basis. You may view how many slots have been used for a dataset from the wagon table in My Analyses:
 
 <div align="center">
-<img src="../images/trainSlotsPerUserPerAnalysis.png" width="60%">
+<img src="../images/trainSlotsPerUserPerAnalysis.png" width="60%" alt="Screenshot of train slots per user per analysis">
 </div>
-
 
 Trains may use more than one slot. The number of slots is calculated as the number of wagons from the analysis in the train, capped by the number of cores that the train runs with. The slots used per analysis may be viewed in the train 'Test - Full Test' tab, where also the time when the train will stop counting towards the quota is shown:
 
 <div align="center">
-<img src="../images/weeklySlots.png" width="70%">
+<img src="../images/weeklySlots.png" width="70%" alt="Screenshot of weekly slots">
 </div>
 
 If a single user wagon needs more memory than available in a single core queue, it can still be composed by hyperloop to the two core queue but it will count as a **heavy wagon**. Heavy wagons count as two slots. These wagons are listed in red in the train 'Test - Per Wagon' tab:
 
 <div align="center">
-<img src="../images/heavyWagon.png" width="50%">
+<img src="../images/heavyWagon.png" width="50%" alt="Screenshot of heavy wagon">
 </div>
 
-
 ## <a name="merge-scripts"></a>Local merging scripts
+
  [Here](https://github.com/romainschotter/HYRunByRunMerging/tree/main) is a repository containing scripts to download all output files from a Hyperloop train run by run, and to merge locally only the files associated to a given run list.
