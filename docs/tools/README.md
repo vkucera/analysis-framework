@@ -59,34 +59,43 @@ To use Clang-Tidy, you need to have O2Physics compiled and a valid symbolic link
 
 The [`readability-identifier-naming`](https://clang.llvm.org/extra/clang-tidy/checks/readability/identifier-naming.html) check can fix deviations from the [naming conventions](https://rawgit.com/AliceO2Group/CodingGuidelines/master/naming_formatting.html).
 
-### Cleaning `#include`s
+### Cleaning `#include` statements and `using` statements
 
-The [`misc-include-cleaner`](https://clang.llvm.org/extra/clang-tidy/checks/misc/include-cleaner.html) check can fix missing and unused `#include`s.
-This helps to apply the [Include What You Use](https://github.com/AliceO2Group/O2Physics/issues/8357) principle which allows to maintain header dependencies clean.
+```danger
+Incorrect usage of `#include` statements and `using` statements causes [unnecessary recompilations](https://github.com/include-what-you-use/include-what-you-use/blob/master/docs/WhyIWYU.md#fewer-recompiles) and can [break compilation](https://github.com/include-what-you-use/include-what-you-use/blob/master/docs/WhyIWYU.md#allow-refactoring) of other parts of the project! (See also [Management of header dependencies](https://indico.cern.ch/event/1513750/#29-management-of-header-depend).)
+```
+
+The [`misc-include-cleaner`](https://clang.llvm.org/extra/clang-tidy/checks/misc/include-cleaner.html) check can fix missing and unused `#include` statements.
+This helps to apply the [Include What You Use](https://github.com/AliceO2Group/O2Physics/issues/8357) (IWYU) principle which allows to maintain header dependencies clean.
+The behaviour of the check can be tuned manually using [IWYU pragmas](https://github.com/include-what-you-use/include-what-you-use/blob/master/docs/IWYUPragmas.md).
+
+The [`google-global-names-in-headers`](https://clang.llvm.org/extra/clang-tidy/checks/google/global-names-in-headers.html) check finds `using` declarations and directives in headers, which cause [global namespace pollution](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rs-using-directive) that can be difficult to fix.
+
+The [`misc-unused-using-decls`](https://clang.llvm.org/extra/clang-tidy/checks/misc/unused-using-decls.html) check finds unused `using` declarations in source files, which create fake dependencies that hamper IWYU.
 
 ### Testing (and fixing) many files at once
 
-Here is an example of how to run the `misc-include-cleaner` check in parallel on all `.h`, `.cxx`, `.C` files in the current directory.
+Here is an example of how to run selected checks in parallel on all `.h`, `.cxx`, `.C` files in the current directory (`.`).
 
 ```bash
-find . -name "*.h" -o -name "*.cxx" -o -name "*.C" | parallel "clang-tidy --fix -checks=-*,misc-include-cleaner {}; echo \"{} \$?\"" > "clang-tidy.log"
+find . -name "*.h" -o -name "*.cxx" -o -name "*.C" | parallel "clang-tidy -fix -checks=-*,misc-include-cleaner,google-global-names-in-headers,misc-unused-using-decls {}; echo \"{} \$?\"" > "clang-tidy.log"
 ```
 
 The [`parallel`](https://www.gnu.org/software/parallel/) command is used to parallelise the execution of the `clang-tidy` command for all files.
 
-For each file, Clang-Tidy will first try to compile it and then run the enabled check(s) and fix found problems (the `--fix` option).
+For each file, Clang-Tidy will first try to compile it and then run the enabled check(s) and fix found problems (the `-fix` option).
 The messages are redirected into `clang-tidy.log`.
 The file name and the exit code are printed below the output of Clang-Tidy so that you can get the list of files for which Clang-Tidy failed with `grep " 1$" "clang-tidy.log"`.
 
 ## Fixing include format
 
 Headers from the same project should be included using quotation marks (`#include "path/header.h"`), all other headers should be included using angle brackets (`#include <path/header.h>`).
-Failing to do so can result in picking a wrong header.
-See more details in the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sf12-prefer-the-quoted-form-of-include-for-files-relative-to-the-including-file-and-the-angle-bracket-form-everywhere-else).
+Failing to do so points the preprocessor to a [wrong location](https://gcc.gnu.org/onlinedocs/cpp/Include-Syntax.html) and can result in picking a wrong header.
+See also the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sf12-prefer-the-quoted-form-of-include-for-files-relative-to-the-including-file-and-the-angle-bracket-form-everywhere-else).
 
 The [`format_includes.awk`](https://github.com/AliceO2Group/O2Physics/blob/master/Scripts/format_includes.awk) script allows to fix the include format in a provided O2Physics file.
 
-To fix the include format in all `.h`, `.cxx` files in the current directory, execute:
+To fix the include format in all `.h`, `.cxx` files in the current directory (`.`), execute:
 
 ```bash
 find . -name "*.h" -o -name "*.cxx" | parallel "awk -f Scripts/format_includes.awk \"{}\" > \"{}.tmp\" && mv \"{}.tmp\" \"{}\""
@@ -111,7 +120,7 @@ cppcheck --language=c++ --std=c++20 --enable=style --check-level=exhaustive --su
 
 The report will be stored in the `err.log` file.
 
-To run a parallelised analysis of all `.h`, `.cxx`, `.C` files in the current directory, execute:
+To run a parallelised analysis of all `.h`, `.cxx`, `.C` files in the current directory (`.`), execute:
 
 ```bash
 find . -name "*.h" -o -name "*.cxx" -o -name "*.C" | parallel "cppcheck --language=c++ --std=c++20 --enable=style --check-level=exhaustive --suppressions-list=cppcheck_config {}" 2> "err.log"
