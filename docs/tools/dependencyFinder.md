@@ -35,7 +35,7 @@ optional arguments:
   -c                    be case-sensitive with table names
   -g {pdf,svg,png}      make a topology graph in a given format
   -x EXCLUDE [EXCLUDE ...]
-                        tables and workflows to exclude
+                        name patterns of tables and workflows to exclude
   -l LEVELS             maximum number of workflow tree levels (default = 0, include all if < 0)
 ```
 
@@ -54,12 +54,14 @@ The backward mode searches for **parents** of the given object in the dependency
 
 Gives a list of workflows that produce a given table.
 
+If the origin prefix is not provided, it is assumed to be `AOD`.
+
 Example: `-t BC_001`
 
 ```text
-Table: BC_001
+Table: AOD/BC_001
 
-BC_001 <- ['o2-analysis-bc-converter']
+AOD/BC_001 <- ['o2-analysis-bc-converter']
 ```
 
 Examples of use:
@@ -76,7 +78,7 @@ Example: `-w o2-analysis-bc-converter`
 ```text
 Workflow: o2-analysis-bc-converter
 
-o2-analysis-bc-converter <- ['BC']
+o2-analysis-bc-converter <- ['AOD/BC']
 ```
 
 Examples of use:
@@ -92,12 +94,14 @@ The forward mode searches for **children** of the given object in the dependency
 
 Gives a list of workflows that consume a given table.
 
+If the origin prefix is not provided, it is assumed to be `AOD`.
+
 Example: `-T BC`
 
 ```text
-Table: BC
+Table: AOD/BC
 
-BC -> ['o2-analysis-bc-converter']
+AOD/BC -> ['o2-analysis-bc-converter']
 ```
 
 Examples of use:
@@ -114,7 +118,7 @@ Example: `-W o2-analysis-bc-converter`
 ```text
 Workflow: o2-analysis-bc-converter
 
-o2-analysis-bc-converter -> ['BC_001']
+o2-analysis-bc-converter -> ['AOD/BC_001']
 ```
 
 Examples of use:
@@ -132,58 +136,55 @@ If the provided number is negative, all levels are considered.
 
 If not provided, only direct dependencies (`-l 0`) are considered.
 
-Example: `-t timestamps -l 1`
+Example: `-w o2-analysis-timestamp -l 1`
 
 ```text
-Table: timestamps
+Workflow: o2-analysis-timestamp
 
-timestamps <- ['o2-analysis-timestamp']
-
-Workflow dependency tree:
-
-o2-analysis-timestamp <- ['BC_001']
-  BC_001 <- ['o2-analysis-bc-converter']
-    o2-analysis-bc-converter <- ['BC']
+o2-analysis-timestamp <- ['AOD/BC_001']
+  AOD/BC_001 <- ['o2-analysis-bc-converter']
+    o2-analysis-bc-converter <- ['AOD/BC']
 ```
 
 ## Exclude (`-x`)
 
-Workflows and tables can be excluded from the search using the `-x` option.
+Workflows and tables can be excluded from the search using the `-x` option which supports regular expressions.
+
+Whitelisting can be achieved using the negative lookahead `(?!...)`.
+
+Example: `-T TRACKSELECTION -x 'o2-analysis(?!-em-)'` finds workflows that consume the `TRACKSELECTION` table and their name contains `o2-analysis-em-`.
+
+```text
+Table: AOD/TRACKSELECTION
+
+AOD/TRACKSELECTION -> ['o2-analysis-em-omega-meson-emc', 'o2-analysis-em-efficiency-ee', 'o2-analysis-em-mc-templates', 'o2-analysis-em-heavy-neutral-meson']
+```
 
 ## Graphical output (`-g`)
 
 The dependency tree can be visualised in a graph. (Requires [Graphviz](https://graphviz.org/) installed.)
 
-Example: `-w o2-analysis-event-selection -l 1 -x o2-analysis-onthefly-tracker o2-analysis-track-propagation-tester -g png`
+Example: `-t TRACKSELECTION -l 1 -x converter onthefly alice3 run2 service -g png`
 
 ```text
-Workflow: o2-analysis-event-selection
+Table: AOD/TRACKSELECTION
 
-o2-analysis-event-selection <- ['BC_001', 'FDD_001', 'FT0', 'FV0A', 'FV0C', 'RUN2BCINFO_001', 'TIMESTAMPS', 'ZDC_001', 'BCSEL', 'COLLISION_001', 'TRACK', 'TRACKEXTRA_002', 'TRACK_IU']
-  BC_001 <- ['o2-analysis-bc-converter']
-    o2-analysis-bc-converter <- ['BC']
-  FDD_001 <- ['o2-analysis-fdd-converter']
-    o2-analysis-fdd-converter <- ['FDD']
-  RUN2BCINFO_001 <- ['o2-analysis-run2bcinfos-converter']
-    o2-analysis-run2bcinfos-converter <- ['RUN2BCINFO']
-  TIMESTAMPS <- ['o2-analysis-timestamp']
-    o2-analysis-timestamp <- ['BC_001']
-  ZDC_001 <- ['o2-analysis-zdc-converter']
-    o2-analysis-zdc-converter <- ['BC_001', 'ZDC']
-  BCSEL <- ['o2-analysis-event-selection']
-  COLLISION_001 <- ['o2-analysis-collision-converter']
-    o2-analysis-collision-converter <- ['COLLISION']
-  TRACK <- ['o2-analysis-track-propagation']
-    o2-analysis-track-propagation <- ['BC_001', 'COLLISION_001', 'MCPARTICLE_001', 'MCTRACKLABEL', 'TIMESTAMPS', 'TRACKCOV_IU', 'TRACKEXTRA_002', 'TRACK_IU']
-  TRACKEXTRA_002 <- ['o2-analysis-tracks-extra-v002-converter']
-    o2-analysis-tracks-extra-v002-converter <- ['TRACKEXTRA', 'TRACKEXTRA_001', 'TRACKEXTRA_002']
+AOD/TRACKSELECTION <- ['o2-analysis-trackselection']
 
-Making dot file in: o2-analysis-event-selection.gv
-Making graph in: o2-analysis-event-selection.png
+Workflow dependency tree:
+
+o2-analysis-trackselection <- ['AOD/TRACK', 'AOD/TRACKDCA', 'AOD/TRACKEXTRA_002']
+  AOD/TRACK <- ['o2-analysis-track-propagation']
+    o2-analysis-track-propagation <- ['AOD/BC_001', 'AOD/COLLISION_001', 'AOD/MCPARTICLE_001', 'AOD/MCTRACKLABEL', 'AOD/TIMESTAMPS', 'AOD/TRACKCOV_IU', 'AOD/TRACKEXTRA_002', 'AOD/TRACK_IU']
+  AOD/TRACKDCA <- ['o2-analysis-trackextension', 'o2-analysis-track-propagation']
+    o2-analysis-trackextension <- ['AOD/BC_001', 'AOD/COLLISION_001', 'AOD/TIMESTAMPS', 'AOD/TRACK', 'AOD/TRACKEXTRA_002']
+
+Making dot file in: TRACKSELECTION.gv
+Making graph in: TRACKSELECTION.png
 ```
 
-The output graph `o2-analysis-event-selection.png` is shown below:
+The output graph `TRACKSELECTION.png` is shown below:
 
 <div align="center">
-<img src="o2-analysis-event-selection.png" width="1200px" alt="o2-analysis-event-selection">
+<img src="TRACKSELECTION.png" width="1000px" alt="TRACKSELECTION">
 </div>
