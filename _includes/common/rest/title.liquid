@@ -1,8 +1,6 @@
 {%- case page.url -%}
     {%- when "/" -%}
-        {%- assign title = site.title
-            | append: " · "
-            | append: site.description | truncate: 110 -%}
+        {%- assign title = site.title -%}
     {%- when "/search.html" -%}
         {%- assign title = __.search | default: "Search"
             | append: " · "
